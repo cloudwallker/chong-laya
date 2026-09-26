@@ -1,0 +1,3198 @@
+{
+  "status": "complete",
+  "created_at": "2026-09-26T07:12:16.382094+00:00",
+  "protocol": {
+    "warmup_calls": 1,
+    "baseline_order": [
+      "buy",
+      "wait",
+      "skip"
+    ],
+    "reordered": [
+      "skip",
+      "wait",
+      "buy"
+    ],
+    "calibrated": false,
+    "notes": "人工虚构小样本；每两个改写是一组场景。未经校准，不代表购买正确概率。"
+  },
+  "summary": {
+    "total": 30,
+    "completed": 30,
+    "errors": 0,
+    "matched": 11,
+    "label_agreement": 0.36666666666666664,
+    "per_label": {
+      "buy": {
+        "total": 10,
+        "matched": 7,
+        "agreement": 0.7
+      },
+      "wait": {
+        "total": 10,
+        "matched": 4,
+        "agreement": 0.4
+      },
+      "skip": {
+        "total": 10,
+        "matched": 0,
+        "agreement": 0.0
+      }
+    },
+    "paraphrase": {
+      "consistent": 9,
+      "comparable": 15,
+      "total_pairs": 15,
+      "agreement": 0.6
+    },
+    "option_order": {
+      "consistent": 27,
+      "comparable": 30,
+      "total": 30,
+      "errors": 0,
+      "agreement": 0.9
+    },
+    "latency_ms": {
+      "median": 145.91219999874738,
+      "mean": 149.91641666644378,
+      "min": 133.0519999992248,
+      "max": 181.69610000040848
+    }
+  },
+  "rows": [
+    {
+      "id": "buy-01",
+      "context": "每天晚上要在书桌看纸质资料，原来的台灯坏了，家里没有其他能照亮桌面的灯；买新台灯的钱已单独留好，不影响日常开支。",
+      "expected": "buy",
+      "category": "need",
+      "pair_id": "buy-p1",
+      "variant": "original",
+      "baseline": {
+        "choice": "skip",
+        "probabilities": {
+          "buy": 0.2037,
+          "wait": 0.0236,
+          "skip": 0.7727
+        },
+        "elapsed_ms": 173.55200000019977,
+        "model": "convaiinnovations/laya-multilingual",
+        "request": {
+          "state": "每天晚上要在书桌看纸质资料，原来的台灯坏了，家里没有其他能照亮桌面的灯；买新台灯的钱已单独留好，不影响日常开支。",
+          "questions": {
+            "decision": {
+              "type": "choice",
+              "instructions": "按购物情况选一项：预算有压力，或现有物品足够且主要受促销驱动，选不冲；用途明确、预算足够且无替代选冲；其他选等等。",
+              "criteria": {
+                "buy": "冲：用途明确、预算足够、现有物品不能满足",
+                "wait": "等等：其余情况",
+                "skip": "不冲：预算有压力；或现有物品足够且主要受促销驱动"
+              }
+            }
+          }
+        },
+        "raw_response": {
+          "model": "laya-rl-agent",
+          "answers": {
+            "decision": {
+              "type": "choice",
+              "choice": "skip",
+              "probabilities": {
+                "buy": 0.2037,
+                "wait": 0.0236,
+                "skip": 0.7727
+              },
+              "confidence": 0.4431,
+              "answer_confidence": 0.7727,
+              "action": {
+                "act_probability": 1.0
+              }
+            }
+          },
+          "usage": {
+            "input_tokens": 132,
+            "output_tokens": 0
+          }
+        }
+      },
+      "reordered": {
+        "choice": "skip",
+        "probabilities": {
+          "skip": 0.8983,
+          "wait": 0.0286,
+          "buy": 0.0732
+        },
+        "elapsed_ms": 172.99669999920297,
+        "model": "convaiinnovations/laya-multilingual",
+        "request": {
+          "state": "每天晚上要在书桌看纸质资料，原来的台灯坏了，家里没有其他能照亮桌面的灯；买新台灯的钱已单独留好，不影响日常开支。",
+          "questions": {
+            "decision": {
+              "type": "choice",
+              "instructions": "按购物情况选一项：预算有压力，或现有物品足够且主要受促销驱动，选不冲；用途明确、预算足够且无替代选冲；其他选等等。",
+              "criteria": {
+                "skip": "不冲：预算有压力；或现有物品足够且主要受促销驱动",
+                "wait": "等等：其余情况",
+                "buy": "冲：用途明确、预算足够、现有物品不能满足"
+              }
+            }
+          }
+        },
+        "raw_response": {
+          "model": "laya-rl-agent",
+          "answers": {
+            "decision": {
+              "type": "choice",
+              "choice": "skip",
+              "probabilities": {
+                "skip": 0.8983,
+                "wait": 0.0286,
+                "buy": 0.0732
+              },
+              "confidence": 0.6457,
+              "answer_confidence": 0.8983,
+              "action": {
+                "act_probability": 1.0
+              }
+            }
+          },
+          "usage": {
+            "input_tokens": 132,
+            "output_tokens": 0
+          }
+        }
+      },
+      "error": null,
+      "reordered_error": null
+    },
+    {
+      "id": "buy-02",
+      "context": "我每晚都得在桌前读纸质资料，旧台灯已经不亮，也找不到别的灯替用；新灯的预算已经留出，生活费不受影响。",
+      "expected": "buy",
+      "category": "need",
+      "pair_id": "buy-p1",
+      "variant": "paraphrase",
+      "baseline": {
+        "choice": "skip",
+        "probabilities": {
+          "buy": 0.1679,
+          "wait": 0.0786,
+          "skip": 0.7534
+        },
+        "elapsed_ms": 166.12119999990682,
+        "model": "convaiinnovations/laya-multilingual",
+        "request": {
+          "state": "我每晚都得在桌前读纸质资料，旧台灯已经不亮，也找不到别的灯替用；新灯的预算已经留出，生活费不受影响。",
+          "questions": {
+            "decision": {
+              "type": "choice",
+              "instructions": "按购物情况选一项：预算有压力，或现有物品足够且主要受促销驱动，选不冲；用途明确、预算足够且无替代选冲；其他选等等。",
+              "criteria": {
+                "buy": "冲：用途明确、预算足够、现有物品不能满足",
+                "wait": "等等：其余情况",
+                "skip": "不冲：预算有压力；或现有物品足够且主要受促销驱动"
+              }
+            }
+          }
+        },
+        "raw_response": {
+          "model": "laya-rl-agent",
+          "answers": {
+            "decision": {
+              "type": "choice",
+              "choice": "skip",
+              "probabilities": {
+                "buy": 0.1679,
+                "wait": 0.0786,
+                "skip": 0.7534
+              },
+              "confidence": 0.3511,
+              "answer_confidence": 0.7534,
+              "action": {
+                "act_probability": 1.0
+              }
+            }
+          },
+          "usage": {
+            "input_tokens": 129,
+            "output_tokens": 0
+          }
+        }
+      },
+      "reordered": {
+        "choice": "skip",
+        "probabilities": {
+          "skip": 0.7709,
+          "wait": 0.0925,
+          "buy": 0.1366
+        },
+        "elapsed_ms": 160.62430000056338,
+        "model": "convaiinnovations/laya-multilingual",
+        "request": {
+          "state": "我每晚都得在桌前读纸质资料，旧台灯已经不亮，也找不到别的灯替用；新灯的预算已经留出，生活费不受影响。",
+          "questions": {
+            "decision": {
+              "type": "choice",
+              "instructions": "按购物情况选一项：预算有压力，或现有物品足够且主要受促销驱动，选不冲；用途明确、预算足够且无替代选冲；其他选等等。",
+              "criteria": {
+                "skip": "不冲：预算有压力；或现有物品足够且主要受促销驱动",
+                "wait": "等等：其余情况",
+                "buy": "冲：用途明确、预算足够、现有物品不能满足"
+              }
+            }
+          }
+        },
+        "raw_response": {
+          "model": "laya-rl-agent",
+          "answers": {
+            "decision": {
+              "type": "choice",
+              "choice": "skip",
+              "probabilities": {
+                "skip": 0.7709,
+                "wait": 0.0925,
+                "buy": 0.1366
+              },
+              "confidence": 0.3695,
+              "answer_confidence": 0.7709,
+              "action": {
+                "act_probability": 1.0
+              }
+            }
+          },
+          "usage": {
+            "input_tokens": 129,
+            "output_tokens": 0
+          }
+        }
+      },
+      "error": null,
+      "reordered_error": null
+    },
+    {
+      "id": "buy-03",
+      "context": "每天步行通勤需要防雨，唯一一件雨衣破了会漏水，没有别的雨具可用；购买雨衣的费用在本月预算内。",
+      "expected": "buy",
+      "category": "need",
+      "pair_id": "buy-p2",
+      "variant": "original",
+      "baseline": {
+        "choice": "buy",
+        "probabilities": {
+          "buy": 0.9751,
+          "wait": 0.0108,
+          "skip": 0.0141
+        },
+        "elapsed_ms": 163.2659999995667,
+        "model": "convaiinnovations/laya-multilingual",
+        "request": {
+          "state": "每天步行通勤需要防雨，唯一一件雨衣破了会漏水，没有别的雨具可用；购买雨衣的费用在本月预算内。",
+          "questions": {
+            "decision": {
+              "type": "choice",
+              "instructions": "按购物情况选一项：预算有压力，或现有物品足够且主要受促销驱动，选不冲；用途明确、预算足够且无替代选冲；其他选等等。",
+              "criteria": {
+                "buy": "冲：用途明确、预算足够、现有物品不能满足",
+                "wait": "等等：其余情况",
+                "skip": "不冲：预算有压力；或现有物品足够且主要受促销驱动"
+              }
+            }
+          }
+        },
+        "raw_response": {
+          "model": "laya-rl-agent",
+          "answers": {
+            "decision": {
+              "type": "choice",
+              "choice": "buy",
+              "probabilities": {
+                "buy": 0.9751,
+                "wait": 0.0108,
+                "skip": 0.0141
+              },
+              "confidence": 0.8782,
+              "answer_confidence": 0.9751,
+              "action": {
+                "act_probability": 1.0
+              }
+            }
+          },
+          "usage": {
+            "input_tokens": 123,
+            "output_tokens": 0
+          }
+        }
+      },
+      "reordered": {
+        "choice": "buy",
+        "probabilities": {
+          "skip": 0.0083,
+          "wait": 0.0075,
+          "buy": 0.9842
+        },
+        "elapsed_ms": 258.7004999986675,
+        "model": "convaiinnovations/laya-multilingual",
+        "request": {
+          "state": "每天步行通勤需要防雨，唯一一件雨衣破了会漏水，没有别的雨具可用；购买雨衣的费用在本月预算内。",
+          "questions": {
+            "decision": {
+              "type": "choice",
+              "instructions": "按购物情况选一项：预算有压力，或现有物品足够且主要受促销驱动，选不冲；用途明确、预算足够且无替代选冲；其他选等等。",
+              "criteria": {
+                "skip": "不冲：预算有压力；或现有物品足够且主要受促销驱动",
+                "wait": "等等：其余情况",
+                "buy": "冲：用途明确、预算足够、现有物品不能满足"
+              }
+            }
+          }
+        },
+        "raw_response": {
+          "model": "laya-rl-agent",
+          "answers": {
+            "decision": {
+              "type": "choice",
+              "choice": "buy",
+              "probabilities": {
+                "skip": 0.0083,
+                "wait": 0.0075,
+                "buy": 0.9842
+              },
+              "confidence": 0.9163,
+              "answer_confidence": 0.9842,
+              "action": {
+                "act_probability": 1.0
+              }
+            }
+          },
+          "usage": {
+            "input_tokens": 123,
+            "output_tokens": 0
+          }
+        }
+      },
+      "error": null,
+      "reordered_error": null
+    },
+    {
+      "id": "buy-04",
+      "context": "我天天走路上班，现有那件雨衣漏雨，手头也没有其他能挡雨的东西；换一件雨衣的钱已纳入预算。",
+      "expected": "buy",
+      "category": "need",
+      "pair_id": "buy-p2",
+      "variant": "paraphrase",
+      "baseline": {
+        "choice": "buy",
+        "probabilities": {
+          "buy": 0.7867,
+          "wait": 0.072,
+          "skip": 0.1413
+        },
+        "elapsed_ms": 164.57789999913075,
+        "model": "convaiinnovations/laya-multilingual",
+        "request": {
+          "state": "我天天走路上班，现有那件雨衣漏雨，手头也没有其他能挡雨的东西；换一件雨衣的钱已纳入预算。",
+          "questions": {
+            "decision": {
+              "type": "choice",
+              "instructions": "按购物情况选一项：预算有压力，或现有物品足够且主要受促销驱动，选不冲；用途明确、预算足够且无替代选冲；其他选等等。",
+              "criteria": {
+                "buy": "冲：用途明确、预算足够、现有物品不能满足",
+                "wait": "等等：其余情况",
+                "skip": "不冲：预算有压力；或现有物品足够且主要受促销驱动"
+              }
+            }
+          }
+        },
+        "raw_response": {
+          "model": "laya-rl-agent",
+          "answers": {
+            "decision": {
+              "type": "choice",
+              "choice": "buy",
+              "probabilities": {
+                "buy": 0.7867,
+                "wait": 0.072,
+                "skip": 0.1413
+              },
+              "confidence": 0.404,
+              "answer_confidence": 0.7867,
+              "action": {
+                "act_probability": 1.0
+              }
+            }
+          },
+          "usage": {
+            "input_tokens": 123,
+            "output_tokens": 0
+          }
+        }
+      },
+      "reordered": {
+        "choice": "buy",
+        "probabilities": {
+          "skip": 0.212,
+          "wait": 0.0968,
+          "buy": 0.6912
+        },
+        "elapsed_ms": 159.1339999995398,
+        "model": "convaiinnovations/laya-multilingual",
+        "request": {
+          "state": "我天天走路上班，现有那件雨衣漏雨，手头也没有其他能挡雨的东西；换一件雨衣的钱已纳入预算。",
+          "questions": {
+            "decision": {
+              "type": "choice",
+              "instructions": "按购物情况选一项：预算有压力，或现有物品足够且主要受促销驱动，选不冲；用途明确、预算足够且无替代选冲；其他选等等。",
+              "criteria": {
+                "skip": "不冲：预算有压力；或现有物品足够且主要受促销驱动",
+                "wait": "等等：其余情况",
+                "buy": "冲：用途明确、预算足够、现有物品不能满足"
+              }
+            }
+          }
+        },
+        "raw_response": {
+          "model": "laya-rl-agent",
+          "answers": {
+            "decision": {
+              "type": "choice",
+              "choice": "buy",
+              "probabilities": {
+                "skip": 0.212,
+                "wait": 0.0968,
+                "buy": 0.6912
+              },
+              "confidence": 0.2625,
+              "answer_confidence": 0.6912,
+              "action": {
+                "act_probability": 1.0
+              }
+            }
+          },
+          "usage": {
+            "input_tokens": 123,
+            "output_tokens": 0
+          }
+        }
+      },
+      "error": null,
+      "reordered_error": null
+    },
+    {
+      "id": "buy-05",
+      "context": "在家做饭每天要用切菜板，旧板裂开不能再用，也没有备用板；新板的价格低于预留的厨具预算。",
+      "expected": "buy",
+      "category": "need",
+      "pair_id": "buy-p3",
+      "variant": "original",
+      "baseline": {
+        "choice": "buy",
+        "probabilities": {
+          "buy": 0.3811,
+          "wait": 0.2615,
+          "skip": 0.3574
+        },
+        "elapsed_ms": 181.69610000040848,
+        "model": "convaiinnovations/laya-multilingual",
+        "request": {
+          "state": "在家做饭每天要用切菜板，旧板裂开不能再用，也没有备用板；新板的价格低于预留的厨具预算。",
+          "questions": {
+            "decision": {
+              "type": "choice",
+              "instructions": "按购物情况选一项：预算有压力，或现有物品足够且主要受促销驱动，选不冲；用途明确、预算足够且无替代选冲；其他选等等。",
+              "criteria": {
+                "buy": "冲：用途明确、预算足够、现有物品不能满足",
+                "wait": "等等：其余情况",
+                "skip": "不冲：预算有压力；或现有物品足够且主要受促销驱动"
+              }
+            }
+          }
+        },
+        "raw_response": {
+          "model": "laya-rl-agent",
+          "answers": {
+            "decision": {
+              "type": "choice",
+              "choice": "buy",
+              "probabilities": {
+                "buy": 0.3811,
+                "wait": 0.2615,
+                "skip": 0.3574
+              },
+              "confidence": 0.0114,
+              "answer_confidence": 0.3811,
+              "action": {
+                "act_probability": 1.0
+              }
+            }
+          },
+          "usage": {
+            "input_tokens": 123,
+            "output_tokens": 0
+          }
+        }
+      },
+      "reordered": {
+        "choice": "buy",
+        "probabilities": {
+          "skip": 0.2604,
+          "wait": 0.2985,
+          "buy": 0.4411
+        },
+        "elapsed_ms": 152.5476000006165,
+        "model": "convaiinnovations/laya-multilingual",
+        "request": {
+          "state": "在家做饭每天要用切菜板，旧板裂开不能再用，也没有备用板；新板的价格低于预留的厨具预算。",
+          "questions": {
+            "decision": {
+              "type": "choice",
+              "instructions": "按购物情况选一项：预算有压力，或现有物品足够且主要受促销驱动，选不冲；用途明确、预算足够且无替代选冲；其他选等等。",
+              "criteria": {
+                "skip": "不冲：预算有压力；或现有物品足够且主要受促销驱动",
+                "wait": "等等：其余情况",
+                "buy": "冲：用途明确、预算足够、现有物品不能满足"
+              }
+            }
+          }
+        },
+        "raw_response": {
+          "model": "laya-rl-agent",
+          "answers": {
+            "decision": {
+              "type": "choice",
+              "choice": "buy",
+              "probabilities": {
+                "skip": 0.2604,
+                "wait": 0.2985,
+                "buy": 0.4411
+              },
+              "confidence": 0.0239,
+              "answer_confidence": 0.4411,
+              "action": {
+                "act_probability": 1.0
+              }
+            }
+          },
+          "usage": {
+            "input_tokens": 123,
+            "output_tokens": 0
+          }
+        }
+      },
+      "error": null,
+      "reordered_error": null
+    },
+    {
+      "id": "buy-06",
+      "context": "我每天自己做饭，家中唯一的切菜板已裂得无法使用；厨具预算足够买一块新的，没有可替代的板子。",
+      "expected": "buy",
+      "category": "need",
+      "pair_id": "buy-p3",
+      "variant": "paraphrase",
+      "baseline": {
+        "choice": "buy",
+        "probabilities": {
+          "buy": 0.6868,
+          "wait": 0.1217,
+          "skip": 0.1916
+        },
+        "elapsed_ms": 153.22220000052766,
+        "model": "convaiinnovations/laya-multilingual",
+        "request": {
+          "state": "我每天自己做饭，家中唯一的切菜板已裂得无法使用；厨具预算足够买一块新的，没有可替代的板子。",
+          "questions": {
+            "decision": {
+              "type": "choice",
+              "instructions": "按购物情况选一项：预算有压力，或现有物品足够且主要受促销驱动，选不冲；用途明确、预算足够且无替代选冲；其他选等等。",
+              "criteria": {
+                "buy": "冲：用途明确、预算足够、现有物品不能满足",
+                "wait": "等等：其余情况",
+                "skip": "不冲：预算有压力；或现有物品足够且主要受促销驱动"
+              }
+            }
+          }
+        },
+        "raw_response": {
+          "model": "laya-rl-agent",
+          "answers": {
+            "decision": {
+              "type": "choice",
+              "choice": "buy",
+              "probabilities": {
+                "buy": 0.6868,
+                "wait": 0.1217,
+                "skip": 0.1916
+              },
+              "confidence": 0.2436,
+              "answer_confidence": 0.6868,
+              "action": {
+                "act_probability": 1.0
+              }
+            }
+          },
+          "usage": {
+            "input_tokens": 121,
+            "output_tokens": 0
+          }
+        }
+      },
+      "reordered": {
+        "choice": "buy",
+        "probabilities": {
+          "skip": 0.2178,
+          "wait": 0.1392,
+          "buy": 0.643
+        },
+        "elapsed_ms": 150.42459999858693,
+        "model": "convaiinnovations/laya-multilingual",
+        "request": {
+          "state": "我每天自己做饭，家中唯一的切菜板已裂得无法使用；厨具预算足够买一块新的，没有可替代的板子。",
+          "questions": {
+            "decision": {
+              "type": "choice",
+              "instructions": "按购物情况选一项：预算有压力，或现有物品足够且主要受促销驱动，选不冲；用途明确、预算足够且无替代选冲；其他选等等。",
+              "criteria": {
+                "skip": "不冲：预算有压力；或现有物品足够且主要受促销驱动",
+                "wait": "等等：其余情况",
+                "buy": "冲：用途明确、预算足够、现有物品不能满足"
+              }
+            }
+          }
+        },
+        "raw_response": {
+          "model": "laya-rl-agent",
+          "answers": {
+            "decision": {
+              "type": "choice",
+              "choice": "buy",
+              "probabilities": {
+                "skip": 0.2178,
+                "wait": 0.1392,
+                "buy": 0.643
+              },
+              "confidence": 0.1896,
+              "answer_confidence": 0.643,
+              "action": {
+                "act_probability": 1.0
+              }
+            }
+          },
+          "usage": {
+            "input_tokens": 121,
+            "output_tokens": 0
+          }
+        }
+      },
+      "error": null,
+      "reordered_error": null
+    },
+    {
+      "id": "buy-07",
+      "context": "每天用电脑写文档，现有键盘多个按键失灵，家里没有备用键盘；更换费用已经列入预算。",
+      "expected": "buy",
+      "category": "need",
+      "pair_id": "buy-p4",
+      "variant": "original",
+      "baseline": {
+        "choice": "buy",
+        "probabilities": {
+          "buy": 0.4857,
+          "wait": 0.1934,
+          "skip": 0.3209
+        },
+        "elapsed_ms": 142.94410000002244,
+        "model": "convaiinnovations/laya-multilingual",
+        "request": {
+          "state": "每天用电脑写文档，现有键盘多个按键失灵，家里没有备用键盘；更换费用已经列入预算。",
+          "questions": {
+            "decision": {
+              "type": "choice",
+              "instructions": "按购物情况选一项：预算有压力，或现有物品足够且主要受促销驱动，选不冲；用途明确、预算足够且无替代选冲；其他选等等。",
+              "criteria": {
+                "buy": "冲：用途明确、预算足够、现有物品不能满足",
+                "wait": "等等：其余情况",
+                "skip": "不冲：预算有压力；或现有物品足够且主要受促销驱动"
+              }
+            }
+          }
+        },
+        "raw_response": {
+          "model": "laya-rl-agent",
+          "answers": {
+            "decision": {
+              "type": "choice",
+              "choice": "buy",
+              "probabilities": {
+                "buy": 0.4857,
+                "wait": 0.1934,
+                "skip": 0.3209
+              },
+              "confidence": 0.0595,
+              "answer_confidence": 0.4857,
+              "action": {
+                "act_probability": 1.0
+              }
+            }
+          },
+          "usage": {
+            "input_tokens": 116,
+            "output_tokens": 0
+          }
+        }
+      },
+      "reordered": {
+        "choice": "buy",
+        "probabilities": {
+          "skip": 0.2616,
+          "wait": 0.201,
+          "buy": 0.5374
+        },
+        "elapsed_ms": 132.0739999991929,
+        "model": "convaiinnovations/laya-multilingual",
+        "request": {
+          "state": "每天用电脑写文档，现有键盘多个按键失灵，家里没有备用键盘；更换费用已经列入预算。",
+          "questions": {
+            "decision": {
+              "type": "choice",
+              "instructions": "按购物情况选一项：预算有压力，或现有物品足够且主要受促销驱动，选不冲；用途明确、预算足够且无替代选冲；其他选等等。",
+              "criteria": {
+                "skip": "不冲：预算有压力；或现有物品足够且主要受促销驱动",
+                "wait": "等等：其余情况",
+                "buy": "冲：用途明确、预算足够、现有物品不能满足"
+              }
+            }
+          }
+        },
+        "raw_response": {
+          "model": "laya-rl-agent",
+          "answers": {
+            "decision": {
+              "type": "choice",
+              "choice": "buy",
+              "probabilities": {
+                "skip": 0.2616,
+                "wait": 0.201,
+                "buy": 0.5374
+              },
+              "confidence": 0.0834,
+              "answer_confidence": 0.5374,
+              "action": {
+                "act_probability": 1.0
+              }
+            }
+          },
+          "usage": {
+            "input_tokens": 116,
+            "output_tokens": 0
+          }
+        }
+      },
+      "error": null,
+      "reordered_error": null
+    },
+    {
+      "id": "buy-08",
+      "context": "我天天需要在电脑上打字，唯一的键盘好几个键按不出来；已为新键盘留钱，没有另一把能顶上。",
+      "expected": "buy",
+      "category": "need",
+      "pair_id": "buy-p4",
+      "variant": "paraphrase",
+      "baseline": {
+        "choice": "wait",
+        "probabilities": {
+          "buy": 0.2203,
+          "wait": 0.4712,
+          "skip": 0.3085
+        },
+        "elapsed_ms": 144.01379999981145,
+        "model": "convaiinnovations/laya-multilingual",
+        "request": {
+          "state": "我天天需要在电脑上打字，唯一的键盘好几个键按不出来；已为新键盘留钱，没有另一把能顶上。",
+          "questions": {
+            "decision": {
+              "type": "choice",
+              "instructions": "按购物情况选一项：预算有压力，或现有物品足够且主要受促销驱动，选不冲；用途明确、预算足够且无替代选冲；其他选等等。",
+              "criteria": {
+                "buy": "冲：用途明确、预算足够、现有物品不能满足",
+                "wait": "等等：其余情况",
+                "skip": "不冲：预算有压力；或现有物品足够且主要受促销驱动"
+              }
+            }
+          }
+        },
+        "raw_response": {
+          "model": "laya-rl-agent",
+          "answers": {
+            "decision": {
+              "type": "choice",
+              "choice": "wait",
+              "probabilities": {
+                "buy": 0.2203,
+                "wait": 0.4712,
+                "skip": 0.3085
+              },
+              "confidence": 0.0437,
+              "answer_confidence": 0.4712,
+              "action": {
+                "act_probability": 1.0
+              }
+            }
+          },
+          "usage": {
+            "input_tokens": 121,
+            "output_tokens": 0
+          }
+        }
+      },
+      "reordered": {
+        "choice": "wait",
+        "probabilities": {
+          "skip": 0.1575,
+          "wait": 0.5083,
+          "buy": 0.3342
+        },
+        "elapsed_ms": 154.2740999993839,
+        "model": "convaiinnovations/laya-multilingual",
+        "request": {
+          "state": "我天天需要在电脑上打字，唯一的键盘好几个键按不出来；已为新键盘留钱，没有另一把能顶上。",
+          "questions": {
+            "decision": {
+              "type": "choice",
+              "instructions": "按购物情况选一项：预算有压力，或现有物品足够且主要受促销驱动，选不冲；用途明确、预算足够且无替代选冲；其他选等等。",
+              "criteria": {
+                "skip": "不冲：预算有压力；或现有物品足够且主要受促销驱动",
+                "wait": "等等：其余情况",
+                "buy": "冲：用途明确、预算足够、现有物品不能满足"
+              }
+            }
+          }
+        },
+        "raw_response": {
+          "model": "laya-rl-agent",
+          "answers": {
+            "decision": {
+              "type": "choice",
+              "choice": "wait",
+              "probabilities": {
+                "skip": 0.1575,
+                "wait": 0.5083,
+                "buy": 0.3342
+              },
+              "confidence": 0.0886,
+              "answer_confidence": 0.5083,
+              "action": {
+                "act_probability": 1.0
+              }
+            }
+          },
+          "usage": {
+            "input_tokens": 121,
+            "output_tokens": 0
+          }
+        }
+      },
+      "error": null,
+      "reordered_error": null
+    },
+    {
+      "id": "buy-09",
+      "context": "每天带饭需要密封饭盒，旧饭盒盖子断了会漏，家中没有其他合适容器；已从日用品预算留出购买金额。",
+      "expected": "buy",
+      "category": "need",
+      "pair_id": "buy-p5",
+      "variant": "original",
+      "baseline": {
+        "choice": "buy",
+        "probabilities": {
+          "buy": 0.3774,
+          "wait": 0.2834,
+          "skip": 0.3392
+        },
+        "elapsed_ms": 137.33520000096178,
+        "model": "convaiinnovations/laya-multilingual",
+        "request": {
+          "state": "每天带饭需要密封饭盒，旧饭盒盖子断了会漏，家中没有其他合适容器；已从日用品预算留出购买金额。",
+          "questions": {
+            "decision": {
+              "type": "choice",
+              "instructions": "按购物情况选一项：预算有压力，或现有物品足够且主要受促销驱动，选不冲；用途明确、预算足够且无替代选冲；其他选等等。",
+              "criteria": {
+                "buy": "冲：用途明确、预算足够、现有物品不能满足",
+                "wait": "等等：其余情况",
+                "skip": "不冲：预算有压力；或现有物品足够且主要受促销驱动"
+              }
+            }
+          }
+        },
+        "raw_response": {
+          "model": "laya-rl-agent",
+          "answers": {
+            "decision": {
+              "type": "choice",
+              "choice": "buy",
+              "probabilities": {
+                "buy": 0.3774,
+                "wait": 0.2834,
+                "skip": 0.3392
+              },
+              "confidence": 0.0062,
+              "answer_confidence": 0.3774,
+              "action": {
+                "act_probability": 1.0
+              }
+            }
+          },
+          "usage": {
+            "input_tokens": 123,
+            "output_tokens": 0
+          }
+        }
+      },
+      "reordered": {
+        "choice": "buy",
+        "probabilities": {
+          "skip": 0.2006,
+          "wait": 0.3346,
+          "buy": 0.4648
+        },
+        "elapsed_ms": 147.5217999995948,
+        "model": "convaiinnovations/laya-multilingual",
+        "request": {
+          "state": "每天带饭需要密封饭盒，旧饭盒盖子断了会漏，家中没有其他合适容器；已从日用品预算留出购买金额。",
+          "questions": {
+            "decision": {
+              "type": "choice",
+              "instructions": "按购物情况选一项：预算有压力，或现有物品足够且主要受促销驱动，选不冲；用途明确、预算足够且无替代选冲；其他选等等。",
+              "criteria": {
+                "skip": "不冲：预算有压力；或现有物品足够且主要受促销驱动",
+                "wait": "等等：其余情况",
+                "buy": "冲：用途明确、预算足够、现有物品不能满足"
+              }
+            }
+          }
+        },
+        "raw_response": {
+          "model": "laya-rl-agent",
+          "answers": {
+            "decision": {
+              "type": "choice",
+              "choice": "buy",
+              "probabilities": {
+                "skip": 0.2006,
+                "wait": 0.3346,
+                "buy": 0.4648
+              },
+              "confidence": 0.0491,
+              "answer_confidence": 0.4648,
+              "action": {
+                "act_probability": 1.0
+              }
+            }
+          },
+          "usage": {
+            "input_tokens": 123,
+            "output_tokens": 0
+          }
+        }
+      },
+      "error": null,
+      "reordered_error": null
+    },
+    {
+      "id": "buy-10",
+      "context": "我每天要装饭出门，原来的饭盒关不严又会漏，也没有别的容器可替代；买新饭盒的钱在日用品预算里。",
+      "expected": "buy",
+      "category": "need",
+      "pair_id": "buy-p5",
+      "variant": "paraphrase",
+      "baseline": {
+        "choice": "buy",
+        "probabilities": {
+          "buy": 0.4074,
+          "wait": 0.2443,
+          "skip": 0.3484
+        },
+        "elapsed_ms": 163.1470000011177,
+        "model": "convaiinnovations/laya-multilingual",
+        "request": {
+          "state": "我每天要装饭出门，原来的饭盒关不严又会漏，也没有别的容器可替代；买新饭盒的钱在日用品预算里。",
+          "questions": {
+            "decision": {
+              "type": "choice",
+              "instructions": "按购物情况选一项：预算有压力，或现有物品足够且主要受促销驱动，选不冲；用途明确、预算足够且无替代选冲；其他选等等。",
+              "criteria": {
+                "buy": "冲：用途明确、预算足够、现有物品不能满足",
+                "wait": "等等：其余情况",
+                "skip": "不冲：预算有压力；或现有物品足够且主要受促销驱动"
+              }
+            }
+          }
+        },
+        "raw_response": {
+          "model": "laya-rl-agent",
+          "answers": {
+            "decision": {
+              "type": "choice",
+              "choice": "buy",
+              "probabilities": {
+                "buy": 0.4074,
+                "wait": 0.2443,
+                "skip": 0.3484
+              },
+              "confidence": 0.0192,
+              "answer_confidence": 0.4074,
+              "action": {
+                "act_probability": 1.0
+              }
+            }
+          },
+          "usage": {
+            "input_tokens": 124,
+            "output_tokens": 0
+          }
+        }
+      },
+      "reordered": {
+        "choice": "buy",
+        "probabilities": {
+          "skip": 0.2854,
+          "wait": 0.3445,
+          "buy": 0.3701
+        },
+        "elapsed_ms": 143.02429999952437,
+        "model": "convaiinnovations/laya-multilingual",
+        "request": {
+          "state": "我每天要装饭出门，原来的饭盒关不严又会漏，也没有别的容器可替代；买新饭盒的钱在日用品预算里。",
+          "questions": {
+            "decision": {
+              "type": "choice",
+              "instructions": "按购物情况选一项：预算有压力，或现有物品足够且主要受促销驱动，选不冲；用途明确、预算足够且无替代选冲；其他选等等。",
+              "criteria": {
+                "skip": "不冲：预算有压力；或现有物品足够且主要受促销驱动",
+                "wait": "等等：其余情况",
+                "buy": "冲：用途明确、预算足够、现有物品不能满足"
+              }
+            }
+          }
+        },
+        "raw_response": {
+          "model": "laya-rl-agent",
+          "answers": {
+            "decision": {
+              "type": "choice",
+              "choice": "buy",
+              "probabilities": {
+                "skip": 0.2854,
+                "wait": 0.3445,
+                "buy": 0.3701
+              },
+              "confidence": 0.0053,
+              "answer_confidence": 0.3701,
+              "action": {
+                "act_probability": 1.0
+              }
+            }
+          },
+          "usage": {
+            "input_tokens": 124,
+            "output_tokens": 0
+          }
+        }
+      },
+      "error": null,
+      "reordered_error": null
+    },
+    {
+      "id": "skip-01",
+      "context": "旧书包确实磨破了，但这个月房租和基本生活费还差一笔；现在买新书包会挤占这些必要支出。",
+      "expected": "skip",
+      "category": "budget",
+      "pair_id": "skip-p1",
+      "variant": "original",
+      "baseline": {
+        "choice": "buy",
+        "probabilities": {
+          "buy": 0.9678,
+          "wait": 0.0247,
+          "skip": 0.0075
+        },
+        "elapsed_ms": 142.48249999945983,
+        "model": "convaiinnovations/laya-multilingual",
+        "request": {
+          "state": "旧书包确实磨破了，但这个月房租和基本生活费还差一笔；现在买新书包会挤占这些必要支出。",
+          "questions": {
+            "decision": {
+              "type": "choice",
+              "instructions": "按购物情况选一项：预算有压力，或现有物品足够且主要受促销驱动，选不冲；用途明确、预算足够且无替代选冲；其他选等等。",
+              "criteria": {
+                "buy": "冲：用途明确、预算足够、现有物品不能满足",
+                "wait": "等等：其余情况",
+                "skip": "不冲：预算有压力；或现有物品足够且主要受促销驱动"
+              }
+            }
+          }
+        },
+        "raw_response": {
+          "model": "laya-rl-agent",
+          "answers": {
+            "decision": {
+              "type": "choice",
+              "choice": "buy",
+              "probabilities": {
+                "buy": 0.9678,
+                "wait": 0.0247,
+                "skip": 0.0075
+              },
+              "confidence": 0.8546,
+              "answer_confidence": 0.9678,
+              "action": {
+                "act_probability": 1.0
+              }
+            }
+          },
+          "usage": {
+            "input_tokens": 123,
+            "output_tokens": 0
+          }
+        }
+      },
+      "reordered": {
+        "choice": "buy",
+        "probabilities": {
+          "skip": 0.0254,
+          "wait": 0.1063,
+          "buy": 0.8683
+        },
+        "elapsed_ms": 136.64500000049884,
+        "model": "convaiinnovations/laya-multilingual",
+        "request": {
+          "state": "旧书包确实磨破了，但这个月房租和基本生活费还差一笔；现在买新书包会挤占这些必要支出。",
+          "questions": {
+            "decision": {
+              "type": "choice",
+              "instructions": "按购物情况选一项：预算有压力，或现有物品足够且主要受促销驱动，选不冲；用途明确、预算足够且无替代选冲；其他选等等。",
+              "criteria": {
+                "skip": "不冲：预算有压力；或现有物品足够且主要受促销驱动",
+                "wait": "等等：其余情况",
+                "buy": "冲：用途明确、预算足够、现有物品不能满足"
+              }
+            }
+          }
+        },
+        "raw_response": {
+          "model": "laya-rl-agent",
+          "answers": {
+            "decision": {
+              "type": "choice",
+              "choice": "buy",
+              "probabilities": {
+                "skip": 0.0254,
+                "wait": 0.1063,
+                "buy": 0.8683
+              },
+              "confidence": 0.5866,
+              "answer_confidence": 0.8683,
+              "action": {
+                "act_probability": 1.0
+              }
+            }
+          },
+          "usage": {
+            "input_tokens": 123,
+            "output_tokens": 0
+          }
+        }
+      },
+      "error": null,
+      "reordered_error": null
+    },
+    {
+      "id": "skip-02",
+      "context": "我的书包已经破损，可本月连房租和日常开销都没凑齐；此时换包会动用必要生活费用。",
+      "expected": "skip",
+      "category": "budget",
+      "pair_id": "skip-p1",
+      "variant": "paraphrase",
+      "baseline": {
+        "choice": "buy",
+        "probabilities": {
+          "buy": 0.6259,
+          "wait": 0.2433,
+          "skip": 0.1308
+        },
+        "elapsed_ms": 147.94959999926505,
+        "model": "convaiinnovations/laya-multilingual",
+        "request": {
+          "state": "我的书包已经破损，可本月连房租和日常开销都没凑齐；此时换包会动用必要生活费用。",
+          "questions": {
+            "decision": {
+              "type": "choice",
+              "instructions": "按购物情况选一项：预算有压力，或现有物品足够且主要受促销驱动，选不冲；用途明确、预算足够且无替代选冲；其他选等等。",
+              "criteria": {
+                "buy": "冲：用途明确、预算足够、现有物品不能满足",
+                "wait": "等等：其余情况",
+                "skip": "不冲：预算有压力；或现有物品足够且主要受促销驱动"
+              }
+            }
+          }
+        },
+        "raw_response": {
+          "model": "laya-rl-agent",
+          "answers": {
+            "decision": {
+              "type": "choice",
+              "choice": "buy",
+              "probabilities": {
+                "buy": 0.6259,
+                "wait": 0.2433,
+                "skip": 0.1308
+              },
+              "confidence": 0.1779,
+              "answer_confidence": 0.6259,
+              "action": {
+                "act_probability": 1.0
+              }
+            }
+          },
+          "usage": {
+            "input_tokens": 120,
+            "output_tokens": 0
+          }
+        }
+      },
+      "reordered": {
+        "choice": "buy",
+        "probabilities": {
+          "skip": 0.1001,
+          "wait": 0.2783,
+          "buy": 0.6217
+        },
+        "elapsed_ms": 141.41310000013618,
+        "model": "convaiinnovations/laya-multilingual",
+        "request": {
+          "state": "我的书包已经破损，可本月连房租和日常开销都没凑齐；此时换包会动用必要生活费用。",
+          "questions": {
+            "decision": {
+              "type": "choice",
+              "instructions": "按购物情况选一项：预算有压力，或现有物品足够且主要受促销驱动，选不冲；用途明确、预算足够且无替代选冲；其他选等等。",
+              "criteria": {
+                "skip": "不冲：预算有压力；或现有物品足够且主要受促销驱动",
+                "wait": "等等：其余情况",
+                "buy": "冲：用途明确、预算足够、现有物品不能满足"
+              }
+            }
+          }
+        },
+        "raw_response": {
+          "model": "laya-rl-agent",
+          "answers": {
+            "decision": {
+              "type": "choice",
+              "choice": "buy",
+              "probabilities": {
+                "skip": 0.1001,
+                "wait": 0.2783,
+                "buy": 0.6217
+              },
+              "confidence": 0.1973,
+              "answer_confidence": 0.6217,
+              "action": {
+                "act_probability": 1.0
+              }
+            }
+          },
+          "usage": {
+            "input_tokens": 120,
+            "output_tokens": 0
+          }
+        }
+      },
+      "error": null,
+      "reordered_error": null
+    },
+    {
+      "id": "skip-03",
+      "context": "做饭用的锅需要更换，但本月收入减少，买锅的钱会让水电费不够付。",
+      "expected": "skip",
+      "category": "budget",
+      "pair_id": "skip-p2",
+      "variant": "original",
+      "baseline": {
+        "choice": "buy",
+        "probabilities": {
+          "buy": 0.4808,
+          "wait": 0.166,
+          "skip": 0.3532
+        },
+        "elapsed_ms": 151.0545999990427,
+        "model": "convaiinnovations/laya-multilingual",
+        "request": {
+          "state": "做饭用的锅需要更换，但本月收入减少，买锅的钱会让水电费不够付。",
+          "questions": {
+            "decision": {
+              "type": "choice",
+              "instructions": "按购物情况选一项：预算有压力，或现有物品足够且主要受促销驱动，选不冲；用途明确、预算足够且无替代选冲；其他选等等。",
+              "criteria": {
+                "buy": "冲：用途明确、预算足够、现有物品不能满足",
+                "wait": "等等：其余情况",
+                "skip": "不冲：预算有压力；或现有物品足够且主要受促销驱动"
+              }
+            }
+          }
+        },
+        "raw_response": {
+          "model": "laya-rl-agent",
+          "answers": {
+            "decision": {
+              "type": "choice",
+              "choice": "buy",
+              "probabilities": {
+                "buy": 0.4808,
+                "wait": 0.166,
+                "skip": 0.3532
+              },
+              "confidence": 0.0736,
+              "answer_confidence": 0.4808,
+              "action": {
+                "act_probability": 1.0
+              }
+            }
+          },
+          "usage": {
+            "input_tokens": 114,
+            "output_tokens": 0
+          }
+        }
+      },
+      "reordered": {
+        "choice": "buy",
+        "probabilities": {
+          "skip": 0.2962,
+          "wait": 0.2044,
+          "buy": 0.4994
+        },
+        "elapsed_ms": 194.71859999976004,
+        "model": "convaiinnovations/laya-multilingual",
+        "request": {
+          "state": "做饭用的锅需要更换，但本月收入减少，买锅的钱会让水电费不够付。",
+          "questions": {
+            "decision": {
+              "type": "choice",
+              "instructions": "按购物情况选一项：预算有压力，或现有物品足够且主要受促销驱动，选不冲；用途明确、预算足够且无替代选冲；其他选等等。",
+              "criteria": {
+                "skip": "不冲：预算有压力；或现有物品足够且主要受促销驱动",
+                "wait": "等等：其余情况",
+                "buy": "冲：用途明确、预算足够、现有物品不能满足"
+              }
+            }
+          }
+        },
+        "raw_response": {
+          "model": "laya-rl-agent",
+          "answers": {
+            "decision": {
+              "type": "choice",
+              "choice": "buy",
+              "probabilities": {
+                "skip": 0.2962,
+                "wait": 0.2044,
+                "buy": 0.4994
+              },
+              "confidence": 0.061,
+              "answer_confidence": 0.4994,
+              "action": {
+                "act_probability": 1.0
+              }
+            }
+          },
+          "usage": {
+            "input_tokens": 114,
+            "output_tokens": 0
+          }
+        }
+      },
+      "error": null,
+      "reordered_error": null
+    },
+    {
+      "id": "skip-04",
+      "context": "我需要换一口锅，不过这个月收入下降；如果现在买，水电账单就付不全。",
+      "expected": "skip",
+      "category": "budget",
+      "pair_id": "skip-p2",
+      "variant": "paraphrase",
+      "baseline": {
+        "choice": "wait",
+        "probabilities": {
+          "buy": 0.1758,
+          "wait": 0.5977,
+          "skip": 0.2264
+        },
+        "elapsed_ms": 143.13399999991816,
+        "model": "convaiinnovations/laya-multilingual",
+        "request": {
+          "state": "我需要换一口锅，不过这个月收入下降；如果现在买，水电账单就付不全。",
+          "questions": {
+            "decision": {
+              "type": "choice",
+              "instructions": "按购物情况选一项：预算有压力，或现有物品足够且主要受促销驱动，选不冲；用途明确、预算足够且无替代选冲；其他选等等。",
+              "criteria": {
+                "buy": "冲：用途明确、预算足够、现有物品不能满足",
+                "wait": "等等：其余情况",
+                "skip": "不冲：预算有压力；或现有物品足够且主要受促销驱动"
+              }
+            }
+          }
+        },
+        "raw_response": {
+          "model": "laya-rl-agent",
+          "answers": {
+            "decision": {
+              "type": "choice",
+              "choice": "wait",
+              "probabilities": {
+                "buy": 0.1758,
+                "wait": 0.5977,
+                "skip": 0.2264
+              },
+              "confidence": 0.1357,
+              "answer_confidence": 0.5977,
+              "action": {
+                "act_probability": 1.0
+              }
+            }
+          },
+          "usage": {
+            "input_tokens": 114,
+            "output_tokens": 0
+          }
+        }
+      },
+      "reordered": {
+        "choice": "wait",
+        "probabilities": {
+          "skip": 0.277,
+          "wait": 0.5392,
+          "buy": 0.1838
+        },
+        "elapsed_ms": 137.75770000029297,
+        "model": "convaiinnovations/laya-multilingual",
+        "request": {
+          "state": "我需要换一口锅，不过这个月收入下降；如果现在买，水电账单就付不全。",
+          "questions": {
+            "decision": {
+              "type": "choice",
+              "instructions": "按购物情况选一项：预算有压力，或现有物品足够且主要受促销驱动，选不冲；用途明确、预算足够且无替代选冲；其他选等等。",
+              "criteria": {
+                "skip": "不冲：预算有压力；或现有物品足够且主要受促销驱动",
+                "wait": "等等：其余情况",
+                "buy": "冲：用途明确、预算足够、现有物品不能满足"
+              }
+            }
+          }
+        },
+        "raw_response": {
+          "model": "laya-rl-agent",
+          "answers": {
+            "decision": {
+              "type": "choice",
+              "choice": "wait",
+              "probabilities": {
+                "skip": 0.277,
+                "wait": 0.5392,
+                "buy": 0.1838
+              },
+              "confidence": 0.0898,
+              "answer_confidence": 0.5392,
+              "action": {
+                "act_probability": 1.0
+              }
+            }
+          },
+          "usage": {
+            "input_tokens": 114,
+            "output_tokens": 0
+          }
+        }
+      },
+      "error": null,
+      "reordered_error": null
+    },
+    {
+      "id": "skip-05",
+      "context": "新鞋适合日常走路，但眼下必须先补齐已到期的交通费用，买鞋会使这笔必要费用缺口扩大。",
+      "expected": "skip",
+      "category": "budget",
+      "pair_id": "skip-p3",
+      "variant": "original",
+      "baseline": {
+        "choice": "buy",
+        "probabilities": {
+          "buy": 0.7744,
+          "wait": 0.078,
+          "skip": 0.1476
+        },
+        "elapsed_ms": 140.03070000035223,
+        "model": "convaiinnovations/laya-multilingual",
+        "request": {
+          "state": "新鞋适合日常走路，但眼下必须先补齐已到期的交通费用，买鞋会使这笔必要费用缺口扩大。",
+          "questions": {
+            "decision": {
+              "type": "choice",
+              "instructions": "按购物情况选一项：预算有压力，或现有物品足够且主要受促销驱动，选不冲；用途明确、预算足够且无替代选冲；其他选等等。",
+              "criteria": {
+                "buy": "冲：用途明确、预算足够、现有物品不能满足",
+                "wait": "等等：其余情况",
+                "skip": "不冲：预算有压力；或现有物品足够且主要受促销驱动"
+              }
+            }
+          }
+        },
+        "raw_response": {
+          "model": "laya-rl-agent",
+          "answers": {
+            "decision": {
+              "type": "choice",
+              "choice": "buy",
+              "probabilities": {
+                "buy": 0.7744,
+                "wait": 0.078,
+                "skip": 0.1476
+              },
+              "confidence": 0.3816,
+              "answer_confidence": 0.7744,
+              "action": {
+                "act_probability": 1.0
+              }
+            }
+          },
+          "usage": {
+            "input_tokens": 119,
+            "output_tokens": 0
+          }
+        }
+      },
+      "reordered": {
+        "choice": "buy",
+        "probabilities": {
+          "skip": 0.095,
+          "wait": 0.1151,
+          "buy": 0.7899
+        },
+        "elapsed_ms": 140.8285999987129,
+        "model": "convaiinnovations/laya-multilingual",
+        "request": {
+          "state": "新鞋适合日常走路，但眼下必须先补齐已到期的交通费用，买鞋会使这笔必要费用缺口扩大。",
+          "questions": {
+            "decision": {
+              "type": "choice",
+              "instructions": "按购物情况选一项：预算有压力，或现有物品足够且主要受促销驱动，选不冲；用途明确、预算足够且无替代选冲；其他选等等。",
+              "criteria": {
+                "skip": "不冲：预算有压力；或现有物品足够且主要受促销驱动",
+                "wait": "等等：其余情况",
+                "buy": "冲：用途明确、预算足够、现有物品不能满足"
+              }
+            }
+          }
+        },
+        "raw_response": {
+          "model": "laya-rl-agent",
+          "answers": {
+            "decision": {
+              "type": "choice",
+              "choice": "buy",
+              "probabilities": {
+                "skip": 0.095,
+                "wait": 0.1151,
+                "buy": 0.7899
+              },
+              "confidence": 0.4003,
+              "answer_confidence": 0.7899,
+              "action": {
+                "act_probability": 1.0
+              }
+            }
+          },
+          "usage": {
+            "input_tokens": 119,
+            "output_tokens": 0
+          }
+        }
+      },
+      "error": null,
+      "reordered_error": null
+    },
+    {
+      "id": "skip-06",
+      "context": "这双鞋平时能穿，可当前交通开销还没备齐；现在买鞋会更难支付已经到期的交通费。",
+      "expected": "skip",
+      "category": "budget",
+      "pair_id": "skip-p3",
+      "variant": "paraphrase",
+      "baseline": {
+        "choice": "buy",
+        "probabilities": {
+          "buy": 0.4846,
+          "wait": 0.3572,
+          "skip": 0.1582
+        },
+        "elapsed_ms": 139.9412000009761,
+        "model": "convaiinnovations/laya-multilingual",
+        "request": {
+          "state": "这双鞋平时能穿，可当前交通开销还没备齐；现在买鞋会更难支付已经到期的交通费。",
+          "questions": {
+            "decision": {
+              "type": "choice",
+              "instructions": "按购物情况选一项：预算有压力，或现有物品足够且主要受促销驱动，选不冲；用途明确、预算足够且无替代选冲；其他选等等。",
+              "criteria": {
+                "buy": "冲：用途明确、预算足够、现有物品不能满足",
+                "wait": "等等：其余情况",
+                "skip": "不冲：预算有压力；或现有物品足够且主要受促销驱动"
+              }
+            }
+          }
+        },
+        "raw_response": {
+          "model": "laya-rl-agent",
+          "answers": {
+            "decision": {
+              "type": "choice",
+              "choice": "buy",
+              "probabilities": {
+                "buy": 0.4846,
+                "wait": 0.3572,
+                "skip": 0.1582
+              },
+              "confidence": 0.0802,
+              "answer_confidence": 0.4846,
+              "action": {
+                "act_probability": 1.0
+              }
+            }
+          },
+          "usage": {
+            "input_tokens": 118,
+            "output_tokens": 0
+          }
+        }
+      },
+      "reordered": {
+        "choice": "wait",
+        "probabilities": {
+          "skip": 0.1106,
+          "wait": 0.6441,
+          "buy": 0.2453
+        },
+        "elapsed_ms": 141.07930000136548,
+        "model": "convaiinnovations/laya-multilingual",
+        "request": {
+          "state": "这双鞋平时能穿，可当前交通开销还没备齐；现在买鞋会更难支付已经到期的交通费。",
+          "questions": {
+            "decision": {
+              "type": "choice",
+              "instructions": "按购物情况选一项：预算有压力，或现有物品足够且主要受促销驱动，选不冲；用途明确、预算足够且无替代选冲；其他选等等。",
+              "criteria": {
+                "skip": "不冲：预算有压力；或现有物品足够且主要受促销驱动",
+                "wait": "等等：其余情况",
+                "buy": "冲：用途明确、预算足够、现有物品不能满足"
+              }
+            }
+          }
+        },
+        "raw_response": {
+          "model": "laya-rl-agent",
+          "answers": {
+            "decision": {
+              "type": "choice",
+              "choice": "wait",
+              "probabilities": {
+                "skip": 0.1106,
+                "wait": 0.6441,
+                "buy": 0.2453
+              },
+              "confidence": 0.2066,
+              "answer_confidence": 0.6441,
+              "action": {
+                "act_probability": 1.0
+              }
+            }
+          },
+          "usage": {
+            "input_tokens": 118,
+            "output_tokens": 0
+          }
+        }
+      },
+      "error": null,
+      "reordered_error": null
+    },
+    {
+      "id": "skip-07",
+      "context": "看到杯子限时半价很想买，但家里的杯子完好且数量足够，买新杯子只是怕错过优惠。",
+      "expected": "skip",
+      "category": "promotion",
+      "pair_id": "skip-p4",
+      "variant": "original",
+      "baseline": {
+        "choice": "wait",
+        "probabilities": {
+          "buy": 0.2772,
+          "wait": 0.4901,
+          "skip": 0.2327
+        },
+        "elapsed_ms": 140.41489999908663,
+        "model": "convaiinnovations/laya-multilingual",
+        "request": {
+          "state": "看到杯子限时半价很想买，但家里的杯子完好且数量足够，买新杯子只是怕错过优惠。",
+          "questions": {
+            "decision": {
+              "type": "choice",
+              "instructions": "按购物情况选一项：预算有压力，或现有物品足够且主要受促销驱动，选不冲；用途明确、预算足够且无替代选冲；其他选等等。",
+              "criteria": {
+                "buy": "冲：用途明确、预算足够、现有物品不能满足",
+                "wait": "等等：其余情况",
+                "skip": "不冲：预算有压力；或现有物品足够且主要受促销驱动"
+              }
+            }
+          }
+        },
+        "raw_response": {
+          "model": "laya-rl-agent",
+          "answers": {
+            "decision": {
+              "type": "choice",
+              "choice": "wait",
+              "probabilities": {
+                "buy": 0.2772,
+                "wait": 0.4901,
+                "skip": 0.2327
+              },
+              "confidence": 0.0493,
+              "answer_confidence": 0.4901,
+              "action": {
+                "act_probability": 1.0
+              }
+            }
+          },
+          "usage": {
+            "input_tokens": 120,
+            "output_tokens": 0
+          }
+        }
+      },
+      "reordered": {
+        "choice": "wait",
+        "probabilities": {
+          "skip": 0.1479,
+          "wait": 0.6898,
+          "buy": 0.1623
+        },
+        "elapsed_ms": 139.5580999997037,
+        "model": "convaiinnovations/laya-multilingual",
+        "request": {
+          "state": "看到杯子限时半价很想买，但家里的杯子完好且数量足够，买新杯子只是怕错过优惠。",
+          "questions": {
+            "decision": {
+              "type": "choice",
+              "instructions": "按购物情况选一项：预算有压力，或现有物品足够且主要受促销驱动，选不冲；用途明确、预算足够且无替代选冲；其他选等等。",
+              "criteria": {
+                "skip": "不冲：预算有压力；或现有物品足够且主要受促销驱动",
+                "wait": "等等：其余情况",
+                "buy": "冲：用途明确、预算足够、现有物品不能满足"
+              }
+            }
+          }
+        },
+        "raw_response": {
+          "model": "laya-rl-agent",
+          "answers": {
+            "decision": {
+              "type": "choice",
+              "choice": "wait",
+              "probabilities": {
+                "skip": 0.1479,
+                "wait": 0.6898,
+                "buy": 0.1623
+              },
+              "confidence": 0.241,
+              "answer_confidence": 0.6898,
+              "action": {
+                "act_probability": 1.0
+              }
+            }
+          },
+          "usage": {
+            "input_tokens": 120,
+            "output_tokens": 0
+          }
+        }
+      },
+      "error": null,
+      "reordered_error": null
+    },
+    {
+      "id": "skip-08",
+      "context": "新杯子正在做半价活动，我担心优惠结束；不过现有杯子都能用，也完全够用。",
+      "expected": "skip",
+      "category": "promotion",
+      "pair_id": "skip-p4",
+      "variant": "paraphrase",
+      "baseline": {
+        "choice": "buy",
+        "probabilities": {
+          "buy": 0.6962,
+          "wait": 0.1781,
+          "skip": 0.1257
+        },
+        "elapsed_ms": 147.79559999988123,
+        "model": "convaiinnovations/laya-multilingual",
+        "request": {
+          "state": "新杯子正在做半价活动，我担心优惠结束；不过现有杯子都能用，也完全够用。",
+          "questions": {
+            "decision": {
+              "type": "choice",
+              "instructions": "按购物情况选一项：预算有压力，或现有物品足够且主要受促销驱动，选不冲；用途明确、预算足够且无替代选冲；其他选等等。",
+              "criteria": {
+                "buy": "冲：用途明确、预算足够、现有物品不能满足",
+                "wait": "等等：其余情况",
+                "skip": "不冲：预算有压力；或现有物品足够且主要受促销驱动"
+              }
+            }
+          }
+        },
+        "raw_response": {
+          "model": "laya-rl-agent",
+          "answers": {
+            "decision": {
+              "type": "choice",
+              "choice": "buy",
+              "probabilities": {
+                "buy": 0.6962,
+                "wait": 0.1781,
+                "skip": 0.1257
+              },
+              "confidence": 0.2535,
+              "answer_confidence": 0.6962,
+              "action": {
+                "act_probability": 1.0
+              }
+            }
+          },
+          "usage": {
+            "input_tokens": 115,
+            "output_tokens": 0
+          }
+        }
+      },
+      "reordered": {
+        "choice": "buy",
+        "probabilities": {
+          "skip": 0.2069,
+          "wait": 0.1858,
+          "buy": 0.6072
+        },
+        "elapsed_ms": 145.2129999997851,
+        "model": "convaiinnovations/laya-multilingual",
+        "request": {
+          "state": "新杯子正在做半价活动，我担心优惠结束；不过现有杯子都能用，也完全够用。",
+          "questions": {
+            "decision": {
+              "type": "choice",
+              "instructions": "按购物情况选一项：预算有压力，或现有物品足够且主要受促销驱动，选不冲；用途明确、预算足够且无替代选冲；其他选等等。",
+              "criteria": {
+                "skip": "不冲：预算有压力；或现有物品足够且主要受促销驱动",
+                "wait": "等等：其余情况",
+                "buy": "冲：用途明确、预算足够、现有物品不能满足"
+              }
+            }
+          }
+        },
+        "raw_response": {
+          "model": "laya-rl-agent",
+          "answers": {
+            "decision": {
+              "type": "choice",
+              "choice": "buy",
+              "probabilities": {
+                "skip": 0.2069,
+                "wait": 0.1858,
+                "buy": 0.6072
+              },
+              "confidence": 0.1429,
+              "answer_confidence": 0.6072,
+              "action": {
+                "act_probability": 1.0
+              }
+            }
+          },
+          "usage": {
+            "input_tokens": 115,
+            "output_tokens": 0
+          }
+        }
+      },
+      "error": null,
+      "reordered_error": null
+    },
+    {
+      "id": "skip-09",
+      "context": "收纳盒今天有倒计时折扣，想趁机下单；家里现有收纳盒足以装下所有物品，没有新增需求。",
+      "expected": "skip",
+      "category": "promotion",
+      "pair_id": "skip-p5",
+      "variant": "original",
+      "baseline": {
+        "choice": "buy",
+        "probabilities": {
+          "buy": 0.9068,
+          "wait": 0.0239,
+          "skip": 0.0694
+        },
+        "elapsed_ms": 160.60409999954572,
+        "model": "convaiinnovations/laya-multilingual",
+        "request": {
+          "state": "收纳盒今天有倒计时折扣，想趁机下单；家里现有收纳盒足以装下所有物品，没有新增需求。",
+          "questions": {
+            "decision": {
+              "type": "choice",
+              "instructions": "按购物情况选一项：预算有压力，或现有物品足够且主要受促销驱动，选不冲；用途明确、预算足够且无替代选冲；其他选等等。",
+              "criteria": {
+                "buy": "冲：用途明确、预算足够、现有物品不能满足",
+                "wait": "等等：其余情况",
+                "skip": "不冲：预算有压力；或现有物品足够且主要受促销驱动"
+              }
+            }
+          }
+        },
+        "raw_response": {
+          "model": "laya-rl-agent",
+          "answers": {
+            "decision": {
+              "type": "choice",
+              "choice": "buy",
+              "probabilities": {
+                "buy": 0.9068,
+                "wait": 0.0239,
+                "skip": 0.0694
+              },
+              "confidence": 0.6695,
+              "answer_confidence": 0.9068,
+              "action": {
+                "act_probability": 1.0
+              }
+            }
+          },
+          "usage": {
+            "input_tokens": 118,
+            "output_tokens": 0
+          }
+        }
+      },
+      "reordered": {
+        "choice": "buy",
+        "probabilities": {
+          "skip": 0.0552,
+          "wait": 0.0553,
+          "buy": 0.8895
+        },
+        "elapsed_ms": 160.11369999978342,
+        "model": "convaiinnovations/laya-multilingual",
+        "request": {
+          "state": "收纳盒今天有倒计时折扣，想趁机下单；家里现有收纳盒足以装下所有物品，没有新增需求。",
+          "questions": {
+            "decision": {
+              "type": "choice",
+              "instructions": "按购物情况选一项：预算有压力，或现有物品足够且主要受促销驱动，选不冲；用途明确、预算足够且无替代选冲；其他选等等。",
+              "criteria": {
+                "skip": "不冲：预算有压力；或现有物品足够且主要受促销驱动",
+                "wait": "等等：其余情况",
+                "buy": "冲：用途明确、预算足够、现有物品不能满足"
+              }
+            }
+          }
+        },
+        "raw_response": {
+          "model": "laya-rl-agent",
+          "answers": {
+            "decision": {
+              "type": "choice",
+              "choice": "buy",
+              "probabilities": {
+                "skip": 0.0552,
+                "wait": 0.0553,
+                "buy": 0.8895
+              },
+              "confidence": 0.6139,
+              "answer_confidence": 0.8895,
+              "action": {
+                "act_probability": 1.0
+              }
+            }
+          },
+          "usage": {
+            "input_tokens": 118,
+            "output_tokens": 0
+          }
+        }
+      },
+      "error": null,
+      "reordered_error": null
+    },
+    {
+      "id": "skip-10",
+      "context": "活动提示收纳盒优惠快结束，我因此想买；可目前的盒子已经够装东西，并不需要更多。",
+      "expected": "skip",
+      "category": "promotion",
+      "pair_id": "skip-p5",
+      "variant": "paraphrase",
+      "baseline": {
+        "choice": "buy",
+        "probabilities": {
+          "buy": 0.8741,
+          "wait": 0.0935,
+          "skip": 0.0324
+        },
+        "elapsed_ms": 159.69029999905615,
+        "model": "convaiinnovations/laya-multilingual",
+        "request": {
+          "state": "活动提示收纳盒优惠快结束，我因此想买；可目前的盒子已经够装东西，并不需要更多。",
+          "questions": {
+            "decision": {
+              "type": "choice",
+              "instructions": "按购物情况选一项：预算有压力，或现有物品足够且主要受促销驱动，选不冲；用途明确、预算足够且无替代选冲；其他选等等。",
+              "criteria": {
+                "buy": "冲：用途明确、预算足够、现有物品不能满足",
+                "wait": "等等：其余情况",
+                "skip": "不冲：预算有压力；或现有物品足够且主要受促销驱动"
+              }
+            }
+          }
+        },
+        "raw_response": {
+          "model": "laya-rl-agent",
+          "answers": {
+            "decision": {
+              "type": "choice",
+              "choice": "buy",
+              "probabilities": {
+                "buy": 0.8741,
+                "wait": 0.0935,
+                "skip": 0.0324
+              },
+              "confidence": 0.5901,
+              "answer_confidence": 0.8741,
+              "action": {
+                "act_probability": 1.0
+              }
+            }
+          },
+          "usage": {
+            "input_tokens": 115,
+            "output_tokens": 0
+          }
+        }
+      },
+      "reordered": {
+        "choice": "buy",
+        "probabilities": {
+          "skip": 0.0437,
+          "wait": 0.2103,
+          "buy": 0.746
+        },
+        "elapsed_ms": 166.05379999964498,
+        "model": "convaiinnovations/laya-multilingual",
+        "request": {
+          "state": "活动提示收纳盒优惠快结束，我因此想买；可目前的盒子已经够装东西，并不需要更多。",
+          "questions": {
+            "decision": {
+              "type": "choice",
+              "instructions": "按购物情况选一项：预算有压力，或现有物品足够且主要受促销驱动，选不冲；用途明确、预算足够且无替代选冲；其他选等等。",
+              "criteria": {
+                "skip": "不冲：预算有压力；或现有物品足够且主要受促销驱动",
+                "wait": "等等：其余情况",
+                "buy": "冲：用途明确、预算足够、现有物品不能满足"
+              }
+            }
+          }
+        },
+        "raw_response": {
+          "model": "laya-rl-agent",
+          "answers": {
+            "decision": {
+              "type": "choice",
+              "choice": "buy",
+              "probabilities": {
+                "skip": 0.0437,
+                "wait": 0.2103,
+                "buy": 0.746
+              },
+              "confidence": 0.3779,
+              "answer_confidence": 0.746,
+              "action": {
+                "act_probability": 1.0
+              }
+            }
+          },
+          "usage": {
+            "input_tokens": 115,
+            "output_tokens": 0
+          }
+        }
+      },
+      "error": null,
+      "reordered_error": null
+    },
+    {
+      "id": "wait-01",
+      "context": "我想买一个小桌子放电脑，也知道家里没有合适桌子，但还没核对这笔钱是否在本月预算内。",
+      "expected": "wait",
+      "category": "missing_budget",
+      "pair_id": "wait-p1",
+      "variant": "original",
+      "baseline": {
+        "choice": "skip",
+        "probabilities": {
+          "buy": 0.2491,
+          "wait": 0.2715,
+          "skip": 0.4793
+        },
+        "elapsed_ms": 160.7748000005813,
+        "model": "convaiinnovations/laya-multilingual",
+        "request": {
+          "state": "我想买一个小桌子放电脑，也知道家里没有合适桌子，但还没核对这笔钱是否在本月预算内。",
+          "questions": {
+            "decision": {
+              "type": "choice",
+              "instructions": "按购物情况选一项：预算有压力，或现有物品足够且主要受促销驱动，选不冲；用途明确、预算足够且无替代选冲；其他选等等。",
+              "criteria": {
+                "buy": "冲：用途明确、预算足够、现有物品不能满足",
+                "wait": "等等：其余情况",
+                "skip": "不冲：预算有压力；或现有物品足够且主要受促销驱动"
+              }
+            }
+          }
+        },
+        "raw_response": {
+          "model": "laya-rl-agent",
+          "answers": {
+            "decision": {
+              "type": "choice",
+              "choice": "skip",
+              "probabilities": {
+                "buy": 0.2491,
+                "wait": 0.2715,
+                "skip": 0.4793
+              },
+              "confidence": 0.0418,
+              "answer_confidence": 0.4793,
+              "action": {
+                "act_probability": 1.0
+              }
+            }
+          },
+          "usage": {
+            "input_tokens": 116,
+            "output_tokens": 0
+          }
+        }
+      },
+      "reordered": {
+        "choice": "buy",
+        "probabilities": {
+          "skip": 0.2809,
+          "wait": 0.3059,
+          "buy": 0.4131
+        },
+        "elapsed_ms": 149.64899999904446,
+        "model": "convaiinnovations/laya-multilingual",
+        "request": {
+          "state": "我想买一个小桌子放电脑，也知道家里没有合适桌子，但还没核对这笔钱是否在本月预算内。",
+          "questions": {
+            "decision": {
+              "type": "choice",
+              "instructions": "按购物情况选一项：预算有压力，或现有物品足够且主要受促销驱动，选不冲；用途明确、预算足够且无替代选冲；其他选等等。",
+              "criteria": {
+                "skip": "不冲：预算有压力；或现有物品足够且主要受促销驱动",
+                "wait": "等等：其余情况",
+                "buy": "冲：用途明确、预算足够、现有物品不能满足"
+              }
+            }
+          }
+        },
+        "raw_response": {
+          "model": "laya-rl-agent",
+          "answers": {
+            "decision": {
+              "type": "choice",
+              "choice": "buy",
+              "probabilities": {
+                "skip": 0.2809,
+                "wait": 0.3059,
+                "buy": 0.4131
+              },
+              "confidence": 0.0131,
+              "answer_confidence": 0.4131,
+              "action": {
+                "act_probability": 1.0
+              }
+            }
+          },
+          "usage": {
+            "input_tokens": 116,
+            "output_tokens": 0
+          }
+        }
+      },
+      "error": null,
+      "reordered_error": null
+    },
+    {
+      "id": "wait-02",
+      "context": "电脑需要一张小桌子，现有家具不能顶替；不过我尚未算清本月能否负担购买费用。",
+      "expected": "wait",
+      "category": "missing_budget",
+      "pair_id": "wait-p1",
+      "variant": "paraphrase",
+      "baseline": {
+        "choice": "buy",
+        "probabilities": {
+          "buy": 0.5117,
+          "wait": 0.2047,
+          "skip": 0.2835
+        },
+        "elapsed_ms": 144.33479999934207,
+        "model": "convaiinnovations/laya-multilingual",
+        "request": {
+          "state": "电脑需要一张小桌子，现有家具不能顶替；不过我尚未算清本月能否负担购买费用。",
+          "questions": {
+            "decision": {
+              "type": "choice",
+              "instructions": "按购物情况选一项：预算有压力，或现有物品足够且主要受促销驱动，选不冲；用途明确、预算足够且无替代选冲；其他选等等。",
+              "criteria": {
+                "buy": "冲：用途明确、预算足够、现有物品不能满足",
+                "wait": "等等：其余情况",
+                "skip": "不冲：预算有压力；或现有物品足够且主要受促销驱动"
+              }
+            }
+          }
+        },
+        "raw_response": {
+          "model": "laya-rl-agent",
+          "answers": {
+            "decision": {
+              "type": "choice",
+              "choice": "buy",
+              "probabilities": {
+                "buy": 0.5117,
+                "wait": 0.2047,
+                "skip": 0.2835
+              },
+              "confidence": 0.0671,
+              "answer_confidence": 0.5117,
+              "action": {
+                "act_probability": 1.0
+              }
+            }
+          },
+          "usage": {
+            "input_tokens": 113,
+            "output_tokens": 0
+          }
+        }
+      },
+      "reordered": {
+        "choice": "buy",
+        "probabilities": {
+          "skip": 0.1811,
+          "wait": 0.3399,
+          "buy": 0.479
+        },
+        "elapsed_ms": 134.0092000009463,
+        "model": "convaiinnovations/laya-multilingual",
+        "request": {
+          "state": "电脑需要一张小桌子，现有家具不能顶替；不过我尚未算清本月能否负担购买费用。",
+          "questions": {
+            "decision": {
+              "type": "choice",
+              "instructions": "按购物情况选一项：预算有压力，或现有物品足够且主要受促销驱动，选不冲；用途明确、预算足够且无替代选冲；其他选等等。",
+              "criteria": {
+                "skip": "不冲：预算有压力；或现有物品足够且主要受促销驱动",
+                "wait": "等等：其余情况",
+                "buy": "冲：用途明确、预算足够、现有物品不能满足"
+              }
+            }
+          }
+        },
+        "raw_response": {
+          "model": "laya-rl-agent",
+          "answers": {
+            "decision": {
+              "type": "choice",
+              "choice": "buy",
+              "probabilities": {
+                "skip": 0.1811,
+                "wait": 0.3399,
+                "buy": 0.479
+              },
+              "confidence": 0.0636,
+              "answer_confidence": 0.479,
+              "action": {
+                "act_probability": 1.0
+              }
+            }
+          },
+          "usage": {
+            "input_tokens": 113,
+            "output_tokens": 0
+          }
+        }
+      },
+      "error": null,
+      "reordered_error": null
+    },
+    {
+      "id": "wait-03",
+      "context": "看到便携风扇打折，手头预算足够，也没有风扇，但还没想清楚自己会不会实际使用。",
+      "expected": "wait",
+      "category": "missing_need",
+      "pair_id": "wait-p2",
+      "variant": "original",
+      "baseline": {
+        "choice": "buy",
+        "probabilities": {
+          "buy": 0.3635,
+          "wait": 0.3248,
+          "skip": 0.3117
+        },
+        "elapsed_ms": 147.05749999848194,
+        "model": "convaiinnovations/laya-multilingual",
+        "request": {
+          "state": "看到便携风扇打折，手头预算足够，也没有风扇，但还没想清楚自己会不会实际使用。",
+          "questions": {
+            "decision": {
+              "type": "choice",
+              "instructions": "按购物情况选一项：预算有压力，或现有物品足够且主要受促销驱动，选不冲；用途明确、预算足够且无替代选冲；其他选等等。",
+              "criteria": {
+                "buy": "冲：用途明确、预算足够、现有物品不能满足",
+                "wait": "等等：其余情况",
+                "skip": "不冲：预算有压力；或现有物品足够且主要受促销驱动"
+              }
+            }
+          }
+        },
+        "raw_response": {
+          "model": "laya-rl-agent",
+          "answers": {
+            "decision": {
+              "type": "choice",
+              "choice": "buy",
+              "probabilities": {
+                "buy": 0.3635,
+                "wait": 0.3248,
+                "skip": 0.3117
+              },
+              "confidence": 0.002,
+              "answer_confidence": 0.3635,
+              "action": {
+                "act_probability": 1.0
+              }
+            }
+          },
+          "usage": {
+            "input_tokens": 116,
+            "output_tokens": 0
+          }
+        }
+      },
+      "reordered": {
+        "choice": "buy",
+        "probabilities": {
+          "skip": 0.2563,
+          "wait": 0.2743,
+          "buy": 0.4693
+        },
+        "elapsed_ms": 188.69989999984682,
+        "model": "convaiinnovations/laya-multilingual",
+        "request": {
+          "state": "看到便携风扇打折，手头预算足够，也没有风扇，但还没想清楚自己会不会实际使用。",
+          "questions": {
+            "decision": {
+              "type": "choice",
+              "instructions": "按购物情况选一项：预算有压力，或现有物品足够且主要受促销驱动，选不冲；用途明确、预算足够且无替代选冲；其他选等等。",
+              "criteria": {
+                "skip": "不冲：预算有压力；或现有物品足够且主要受促销驱动",
+                "wait": "等等：其余情况",
+                "buy": "冲：用途明确、预算足够、现有物品不能满足"
+              }
+            }
+          }
+        },
+        "raw_response": {
+          "model": "laya-rl-agent",
+          "answers": {
+            "decision": {
+              "type": "choice",
+              "choice": "buy",
+              "probabilities": {
+                "skip": 0.2563,
+                "wait": 0.2743,
+                "buy": 0.4693
+              },
+              "confidence": 0.0362,
+              "answer_confidence": 0.4693,
+              "action": {
+                "act_probability": 1.0
+              }
+            }
+          },
+          "usage": {
+            "input_tokens": 116,
+            "output_tokens": 0
+          }
+        }
+      },
+      "error": null,
+      "reordered_error": null
+    },
+    {
+      "id": "wait-04",
+      "context": "便携风扇正在促销，我买得起且家里没有类似东西；只是目前不能确定是否真有使用场景。",
+      "expected": "wait",
+      "category": "missing_need",
+      "pair_id": "wait-p2",
+      "variant": "paraphrase",
+      "baseline": {
+        "choice": "wait",
+        "probabilities": {
+          "buy": 0.3905,
+          "wait": 0.4154,
+          "skip": 0.1941
+        },
+        "elapsed_ms": 143.5626999991655,
+        "model": "convaiinnovations/laya-multilingual",
+        "request": {
+          "state": "便携风扇正在促销，我买得起且家里没有类似东西；只是目前不能确定是否真有使用场景。",
+          "questions": {
+            "decision": {
+              "type": "choice",
+              "instructions": "按购物情况选一项：预算有压力，或现有物品足够且主要受促销驱动，选不冲；用途明确、预算足够且无替代选冲；其他选等等。",
+              "criteria": {
+                "buy": "冲：用途明确、预算足够、现有物品不能满足",
+                "wait": "等等：其余情况",
+                "skip": "不冲：预算有压力；或现有物品足够且主要受促销驱动"
+              }
+            }
+          }
+        },
+        "raw_response": {
+          "model": "laya-rl-agent",
+          "answers": {
+            "decision": {
+              "type": "choice",
+              "choice": "wait",
+              "probabilities": {
+                "buy": 0.3905,
+                "wait": 0.4154,
+                "skip": 0.1941
+              },
+              "confidence": 0.044,
+              "answer_confidence": 0.4154,
+              "action": {
+                "act_probability": 1.0
+              }
+            }
+          },
+          "usage": {
+            "input_tokens": 116,
+            "output_tokens": 0
+          }
+        }
+      },
+      "reordered": {
+        "choice": "wait",
+        "probabilities": {
+          "skip": 0.1441,
+          "wait": 0.6282,
+          "buy": 0.2277
+        },
+        "elapsed_ms": 138.62610000069253,
+        "model": "convaiinnovations/laya-multilingual",
+        "request": {
+          "state": "便携风扇正在促销，我买得起且家里没有类似东西；只是目前不能确定是否真有使用场景。",
+          "questions": {
+            "decision": {
+              "type": "choice",
+              "instructions": "按购物情况选一项：预算有压力，或现有物品足够且主要受促销驱动，选不冲；用途明确、预算足够且无替代选冲；其他选等等。",
+              "criteria": {
+                "skip": "不冲：预算有压力；或现有物品足够且主要受促销驱动",
+                "wait": "等等：其余情况",
+                "buy": "冲：用途明确、预算足够、现有物品不能满足"
+              }
+            }
+          }
+        },
+        "raw_response": {
+          "model": "laya-rl-agent",
+          "answers": {
+            "decision": {
+              "type": "choice",
+              "choice": "wait",
+              "probabilities": {
+                "skip": 0.1441,
+                "wait": 0.6282,
+                "buy": 0.2277
+              },
+              "confidence": 0.1734,
+              "answer_confidence": 0.6282,
+              "action": {
+                "act_probability": 1.0
+              }
+            }
+          },
+          "usage": {
+            "input_tokens": 116,
+            "output_tokens": 0
+          }
+        }
+      },
+      "error": null,
+      "reordered_error": null
+    },
+    {
+      "id": "wait-05",
+      "context": "我每天要整理纸张，预算也够买文件夹，但没检查家里的旧文件夹是否还能满足需要。",
+      "expected": "wait",
+      "category": "missing_alternative",
+      "pair_id": "wait-p3",
+      "variant": "original",
+      "baseline": {
+        "choice": "skip",
+        "probabilities": {
+          "buy": 0.0236,
+          "wait": 0.0412,
+          "skip": 0.9353
+        },
+        "elapsed_ms": 138.9149999995425,
+        "model": "convaiinnovations/laya-multilingual",
+        "request": {
+          "state": "我每天要整理纸张，预算也够买文件夹，但没检查家里的旧文件夹是否还能满足需要。",
+          "questions": {
+            "decision": {
+              "type": "choice",
+              "instructions": "按购物情况选一项：预算有压力，或现有物品足够且主要受促销驱动，选不冲；用途明确、预算足够且无替代选冲；其他选等等。",
+              "criteria": {
+                "buy": "冲：用途明确、预算足够、现有物品不能满足",
+                "wait": "等等：其余情况",
+                "skip": "不冲：预算有压力；或现有物品足够且主要受促销驱动"
+              }
+            }
+          }
+        },
+        "raw_response": {
+          "model": "laya-rl-agent",
+          "answers": {
+            "decision": {
+              "type": "choice",
+              "choice": "skip",
+              "probabilities": {
+                "buy": 0.0236,
+                "wait": 0.0412,
+                "skip": 0.9353
+              },
+              "confidence": 0.7431,
+              "answer_confidence": 0.9353,
+              "action": {
+                "act_probability": 1.0
+              }
+            }
+          },
+          "usage": {
+            "input_tokens": 114,
+            "output_tokens": 0
+          }
+        }
+      },
+      "reordered": {
+        "choice": "skip",
+        "probabilities": {
+          "skip": 0.8819,
+          "wait": 0.0896,
+          "buy": 0.0286
+        },
+        "elapsed_ms": 135.2487000003748,
+        "model": "convaiinnovations/laya-multilingual",
+        "request": {
+          "state": "我每天要整理纸张，预算也够买文件夹，但没检查家里的旧文件夹是否还能满足需要。",
+          "questions": {
+            "decision": {
+              "type": "choice",
+              "instructions": "按购物情况选一项：预算有压力，或现有物品足够且主要受促销驱动，选不冲；用途明确、预算足够且无替代选冲；其他选等等。",
+              "criteria": {
+                "skip": "不冲：预算有压力；或现有物品足够且主要受促销驱动",
+                "wait": "等等：其余情况",
+                "buy": "冲：用途明确、预算足够、现有物品不能满足"
+              }
+            }
+          }
+        },
+        "raw_response": {
+          "model": "laya-rl-agent",
+          "answers": {
+            "decision": {
+              "type": "choice",
+              "choice": "skip",
+              "probabilities": {
+                "skip": 0.8819,
+                "wait": 0.0896,
+                "buy": 0.0286
+              },
+              "confidence": 0.61,
+              "answer_confidence": 0.8819,
+              "action": {
+                "act_probability": 1.0
+              }
+            }
+          },
+          "usage": {
+            "input_tokens": 114,
+            "output_tokens": 0
+          }
+        }
+      },
+      "error": null,
+      "reordered_error": null
+    },
+    {
+      "id": "wait-06",
+      "context": "整理资料确实常要用文件夹，购买费用也负担得起；只是我还不知道现有文件夹够不够用。",
+      "expected": "wait",
+      "category": "missing_alternative",
+      "pair_id": "wait-p3",
+      "variant": "paraphrase",
+      "baseline": {
+        "choice": "skip",
+        "probabilities": {
+          "buy": 0.065,
+          "wait": 0.4476,
+          "skip": 0.4874
+        },
+        "elapsed_ms": 133.0519999992248,
+        "model": "convaiinnovations/laya-multilingual",
+        "request": {
+          "state": "整理资料确实常要用文件夹，购买费用也负担得起；只是我还不知道现有文件夹够不够用。",
+          "questions": {
+            "decision": {
+              "type": "choice",
+              "instructions": "按购物情况选一项：预算有压力，或现有物品足够且主要受促销驱动，选不冲；用途明确、预算足够且无替代选冲；其他选等等。",
+              "criteria": {
+                "buy": "冲：用途明确、预算足够、现有物品不能满足",
+                "wait": "等等：其余情况",
+                "skip": "不冲：预算有压力；或现有物品足够且主要受促销驱动"
+              }
+            }
+          }
+        },
+        "raw_response": {
+          "model": "laya-rl-agent",
+          "answers": {
+            "decision": {
+              "type": "choice",
+              "choice": "skip",
+              "probabilities": {
+                "buy": 0.065,
+                "wait": 0.4476,
+                "skip": 0.4874
+              },
+              "confidence": 0.1919,
+              "answer_confidence": 0.4874,
+              "action": {
+                "act_probability": 1.0
+              }
+            }
+          },
+          "usage": {
+            "input_tokens": 112,
+            "output_tokens": 0
+          }
+        }
+      },
+      "reordered": {
+        "choice": "wait",
+        "probabilities": {
+          "skip": 0.422,
+          "wait": 0.4916,
+          "buy": 0.0864
+        },
+        "elapsed_ms": 129.2873000002146,
+        "model": "convaiinnovations/laya-multilingual",
+        "request": {
+          "state": "整理资料确实常要用文件夹，购买费用也负担得起；只是我还不知道现有文件夹够不够用。",
+          "questions": {
+            "decision": {
+              "type": "choice",
+              "instructions": "按购物情况选一项：预算有压力，或现有物品足够且主要受促销驱动，选不冲；用途明确、预算足够且无替代选冲；其他选等等。",
+              "criteria": {
+                "skip": "不冲：预算有压力；或现有物品足够且主要受促销驱动",
+                "wait": "等等：其余情况",
+                "buy": "冲：用途明确、预算足够、现有物品不能满足"
+              }
+            }
+          }
+        },
+        "raw_response": {
+          "model": "laya-rl-agent",
+          "answers": {
+            "decision": {
+              "type": "choice",
+              "choice": "wait",
+              "probabilities": {
+                "skip": 0.422,
+                "wait": 0.4916,
+                "buy": 0.0864
+              },
+              "confidence": 0.1583,
+              "answer_confidence": 0.4916,
+              "action": {
+                "act_probability": 1.0
+              }
+            }
+          },
+          "usage": {
+            "input_tokens": 112,
+            "output_tokens": 0
+          }
+        }
+      },
+      "error": null,
+      "reordered_error": null
+    },
+    {
+      "id": "wait-07",
+      "context": "下个月可能要参加户外活动，正在考虑买折叠椅；活动是否成行还没确定，暂时无法判断是否会用上。",
+      "expected": "wait",
+      "category": "missing_timing",
+      "pair_id": "wait-p4",
+      "variant": "original",
+      "baseline": {
+        "choice": "wait",
+        "probabilities": {
+          "buy": 0.0567,
+          "wait": 0.5209,
+          "skip": 0.4224
+        },
+        "elapsed_ms": 137.02480000029027,
+        "model": "convaiinnovations/laya-multilingual",
+        "request": {
+          "state": "下个月可能要参加户外活动，正在考虑买折叠椅；活动是否成行还没确定，暂时无法判断是否会用上。",
+          "questions": {
+            "decision": {
+              "type": "choice",
+              "instructions": "按购物情况选一项：预算有压力，或现有物品足够且主要受促销驱动，选不冲；用途明确、预算足够且无替代选冲；其他选等等。",
+              "criteria": {
+                "buy": "冲：用途明确、预算足够、现有物品不能满足",
+                "wait": "等等：其余情况",
+                "skip": "不冲：预算有压力；或现有物品足够且主要受促销驱动"
+              }
+            }
+          }
+        },
+        "raw_response": {
+          "model": "laya-rl-agent",
+          "answers": {
+            "decision": {
+              "type": "choice",
+              "choice": "wait",
+              "probabilities": {
+                "buy": 0.0567,
+                "wait": 0.5209,
+                "skip": 0.4224
+              },
+              "confidence": 0.2114,
+              "answer_confidence": 0.5209,
+              "action": {
+                "act_probability": 1.0
+              }
+            }
+          },
+          "usage": {
+            "input_tokens": 118,
+            "output_tokens": 0
+          }
+        }
+      },
+      "reordered": {
+        "choice": "wait",
+        "probabilities": {
+          "skip": 0.2725,
+          "wait": 0.6477,
+          "buy": 0.0799
+        },
+        "elapsed_ms": 133.42199999897275,
+        "model": "convaiinnovations/laya-multilingual",
+        "request": {
+          "state": "下个月可能要参加户外活动，正在考虑买折叠椅；活动是否成行还没确定，暂时无法判断是否会用上。",
+          "questions": {
+            "decision": {
+              "type": "choice",
+              "instructions": "按购物情况选一项：预算有压力，或现有物品足够且主要受促销驱动，选不冲；用途明确、预算足够且无替代选冲；其他选等等。",
+              "criteria": {
+                "skip": "不冲：预算有压力；或现有物品足够且主要受促销驱动",
+                "wait": "等等：其余情况",
+                "buy": "冲：用途明确、预算足够、现有物品不能满足"
+              }
+            }
+          }
+        },
+        "raw_response": {
+          "model": "laya-rl-agent",
+          "answers": {
+            "decision": {
+              "type": "choice",
+              "choice": "wait",
+              "probabilities": {
+                "skip": 0.2725,
+                "wait": 0.6477,
+                "buy": 0.0799
+              },
+              "confidence": 0.2377,
+              "answer_confidence": 0.6477,
+              "action": {
+                "act_probability": 1.0
+              }
+            }
+          },
+          "usage": {
+            "input_tokens": 118,
+            "output_tokens": 0
+          }
+        }
+      },
+      "error": null,
+      "reordered_error": null
+    },
+    {
+      "id": "wait-08",
+      "context": "我在想要不要为下月的户外活动添一把折叠椅，但活动还未敲定，因此使用需求也不确定。",
+      "expected": "wait",
+      "category": "missing_timing",
+      "pair_id": "wait-p4",
+      "variant": "paraphrase",
+      "baseline": {
+        "choice": "wait",
+        "probabilities": {
+          "buy": 0.251,
+          "wait": 0.4227,
+          "skip": 0.3263
+        },
+        "elapsed_ms": 144.76689999901282,
+        "model": "convaiinnovations/laya-multilingual",
+        "request": {
+          "state": "我在想要不要为下月的户外活动添一把折叠椅，但活动还未敲定，因此使用需求也不确定。",
+          "questions": {
+            "decision": {
+              "type": "choice",
+              "instructions": "按购物情况选一项：预算有压力，或现有物品足够且主要受促销驱动，选不冲；用途明确、预算足够且无替代选冲；其他选等等。",
+              "criteria": {
+                "buy": "冲：用途明确、预算足够、现有物品不能满足",
+                "wait": "等等：其余情况",
+                "skip": "不冲：预算有压力；或现有物品足够且主要受促销驱动"
+              }
+            }
+          }
+        },
+        "raw_response": {
+          "model": "laya-rl-agent",
+          "answers": {
+            "decision": {
+              "type": "choice",
+              "choice": "wait",
+              "probabilities": {
+                "buy": 0.251,
+                "wait": 0.4227,
+                "skip": 0.3263
+              },
+              "confidence": 0.0202,
+              "answer_confidence": 0.4227,
+              "action": {
+                "act_probability": 1.0
+              }
+            }
+          },
+          "usage": {
+            "input_tokens": 115,
+            "output_tokens": 0
+          }
+        }
+      },
+      "reordered": {
+        "choice": "wait",
+        "probabilities": {
+          "skip": 0.2908,
+          "wait": 0.4856,
+          "buy": 0.2236
+        },
+        "elapsed_ms": 134.5229999988078,
+        "model": "convaiinnovations/laya-multilingual",
+        "request": {
+          "state": "我在想要不要为下月的户外活动添一把折叠椅，但活动还未敲定，因此使用需求也不确定。",
+          "questions": {
+            "decision": {
+              "type": "choice",
+              "instructions": "按购物情况选一项：预算有压力，或现有物品足够且主要受促销驱动，选不冲；用途明确、预算足够且无替代选冲；其他选等等。",
+              "criteria": {
+                "skip": "不冲：预算有压力；或现有物品足够且主要受促销驱动",
+                "wait": "等等：其余情况",
+                "buy": "冲：用途明确、预算足够、现有物品不能满足"
+              }
+            }
+          }
+        },
+        "raw_response": {
+          "model": "laya-rl-agent",
+          "answers": {
+            "decision": {
+              "type": "choice",
+              "choice": "wait",
+              "probabilities": {
+                "skip": 0.2908,
+                "wait": 0.4856,
+                "buy": 0.2236
+              },
+              "confidence": 0.0489,
+              "answer_confidence": 0.4856,
+              "action": {
+                "act_probability": 1.0
+              }
+            }
+          },
+          "usage": {
+            "input_tokens": 115,
+            "output_tokens": 0
+          }
+        }
+      },
+      "error": null,
+      "reordered_error": null
+    },
+    {
+      "id": "wait-09",
+      "context": "想买一个电脑支架，预算足够，但还没确认尺寸是否适合自己的电脑，现有支架是否能用也未核对。",
+      "expected": "wait",
+      "category": "missing_compatibility",
+      "pair_id": "wait-p5",
+      "variant": "original",
+      "baseline": {
+        "choice": "buy",
+        "probabilities": {
+          "buy": 0.7238,
+          "wait": 0.1219,
+          "skip": 0.1543
+        },
+        "elapsed_ms": 137.20850000026985,
+        "model": "convaiinnovations/laya-multilingual",
+        "request": {
+          "state": "想买一个电脑支架，预算足够，但还没确认尺寸是否适合自己的电脑，现有支架是否能用也未核对。",
+          "questions": {
+            "decision": {
+              "type": "choice",
+              "instructions": "按购物情况选一项：预算有压力，或现有物品足够且主要受促销驱动，选不冲；用途明确、预算足够且无替代选冲；其他选等等。",
+              "criteria": {
+                "buy": "冲：用途明确、预算足够、现有物品不能满足",
+                "wait": "等等：其余情况",
+                "skip": "不冲：预算有压力；或现有物品足够且主要受促销驱动"
+              }
+            }
+          }
+        },
+        "raw_response": {
+          "model": "laya-rl-agent",
+          "answers": {
+            "decision": {
+              "type": "choice",
+              "choice": "buy",
+              "probabilities": {
+                "buy": 0.7238,
+                "wait": 0.1219,
+                "skip": 0.1543
+              },
+              "confidence": 0.2911,
+              "answer_confidence": 0.7238,
+              "action": {
+                "act_probability": 1.0
+              }
+            }
+          },
+          "usage": {
+            "input_tokens": 119,
+            "output_tokens": 0
+          }
+        }
+      },
+      "reordered": {
+        "choice": "buy",
+        "probabilities": {
+          "skip": 0.1179,
+          "wait": 0.1833,
+          "buy": 0.6988
+        },
+        "elapsed_ms": 159.15920000043116,
+        "model": "convaiinnovations/laya-multilingual",
+        "request": {
+          "state": "想买一个电脑支架，预算足够，但还没确认尺寸是否适合自己的电脑，现有支架是否能用也未核对。",
+          "questions": {
+            "decision": {
+              "type": "choice",
+              "instructions": "按购物情况选一项：预算有压力，或现有物品足够且主要受促销驱动，选不冲；用途明确、预算足够且无替代选冲；其他选等等。",
+              "criteria": {
+                "skip": "不冲：预算有压力；或现有物品足够且主要受促销驱动",
+                "wait": "等等：其余情况",
+                "buy": "冲：用途明确、预算足够、现有物品不能满足"
+              }
+            }
+          }
+        },
+        "raw_response": {
+          "model": "laya-rl-agent",
+          "answers": {
+            "decision": {
+              "type": "choice",
+              "choice": "buy",
+              "probabilities": {
+                "skip": 0.1179,
+                "wait": 0.1833,
+                "buy": 0.6988
+              },
+              "confidence": 0.2596,
+              "answer_confidence": 0.6988,
+              "action": {
+                "act_probability": 1.0
+              }
+            }
+          },
+          "usage": {
+            "input_tokens": 119,
+            "output_tokens": 0
+          }
+        }
+      },
+      "error": null,
+      "reordered_error": null
+    },
+    {
+      "id": "wait-10",
+      "context": "电脑支架的钱已经备好，不过新支架能否放稳电脑还不清楚，手头旧支架是否够用也没检查。",
+      "expected": "wait",
+      "category": "missing_compatibility",
+      "pair_id": "wait-p5",
+      "variant": "paraphrase",
+      "baseline": {
+        "choice": "wait",
+        "probabilities": {
+          "buy": 0.2696,
+          "wait": 0.4265,
+          "skip": 0.3039
+        },
+        "elapsed_ms": 147.8224999991653,
+        "model": "convaiinnovations/laya-multilingual",
+        "request": {
+          "state": "电脑支架的钱已经备好，不过新支架能否放稳电脑还不清楚，手头旧支架是否够用也没检查。",
+          "questions": {
+            "decision": {
+              "type": "choice",
+              "instructions": "按购物情况选一项：预算有压力，或现有物品足够且主要受促销驱动，选不冲；用途明确、预算足够且无替代选冲；其他选等等。",
+              "criteria": {
+                "buy": "冲：用途明确、预算足够、现有物品不能满足",
+                "wait": "等等：其余情况",
+                "skip": "不冲：预算有压力；或现有物品足够且主要受促销驱动"
+              }
+            }
+          }
+        },
+        "raw_response": {
+          "model": "laya-rl-agent",
+          "answers": {
+            "decision": {
+              "type": "choice",
+              "choice": "wait",
+              "probabilities": {
+                "buy": 0.2696,
+                "wait": 0.4265,
+                "skip": 0.3039
+              },
+              "confidence": 0.018,
+              "answer_confidence": 0.4265,
+              "action": {
+                "act_probability": 1.0
+              }
+            }
+          },
+          "usage": {
+            "input_tokens": 120,
+            "output_tokens": 0
+          }
+        }
+      },
+      "reordered": {
+        "choice": "wait",
+        "probabilities": {
+          "skip": 0.1418,
+          "wait": 0.7707,
+          "buy": 0.0875
+        },
+        "elapsed_ms": 148.59509999951115,
+        "model": "convaiinnovations/laya-multilingual",
+        "request": {
+          "state": "电脑支架的钱已经备好，不过新支架能否放稳电脑还不清楚，手头旧支架是否够用也没检查。",
+          "questions": {
+            "decision": {
+              "type": "choice",
+              "instructions": "按购物情况选一项：预算有压力，或现有物品足够且主要受促销驱动，选不冲；用途明确、预算足够且无替代选冲；其他选等等。",
+              "criteria": {
+                "skip": "不冲：预算有压力；或现有物品足够且主要受促销驱动",
+                "wait": "等等：其余情况",
+                "buy": "冲：用途明确、预算足够、现有物品不能满足"
+              }
+            }
+          }
+        },
+        "raw_response": {
+          "model": "laya-rl-agent",
+          "answers": {
+            "decision": {
+              "type": "choice",
+              "choice": "wait",
+              "probabilities": {
+                "skip": 0.1418,
+                "wait": 0.7707,
+                "buy": 0.0875
+              },
+              "confidence": 0.3711,
+              "answer_confidence": 0.7707,
+              "action": {
+                "act_probability": 1.0
+              }
+            }
+          },
+          "usage": {
+            "input_tokens": 120,
+            "output_tokens": 0
+          }
+        }
+      },
+      "error": null,
+      "reordered_error": null
+    }
+  ],
+  "runtime": {
+    "python": "3.11.14",
+    "os": "Windows",
+    "architecture": "",
+    "device": "cpu",
+    "packages": {
+      "laya": "0.3.20",
+      "torch": "2.14.0+cpu",
+      "transformers": "5.17.0",
+      "streamlit": "1.64.0"
+    },
+    "checkpoint": "convaiinnovations/laya-multilingual",
+    "checkpoint_revision": "e4e9ddf21a7b1903b7acffd8814ad4307bf63a67"
+  }
+}
