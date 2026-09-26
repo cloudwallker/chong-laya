@@ -1,10 +1,12 @@
 # 今天你冲了吗? · Should I Buy It?
 
-**English summary:** A local shopping-decision experiment using the Laya multilingual model. Describe a purchase and inspect its **buy / wait / skip** choice, uncalibrated probabilities, inference time, request, and raw response.
+### A local lab for exploring Laya's shopping decisions
 
-**中文简介：** 基于 Laya 多语言模型的本地购物决策实验。输入购物情况，查看「冲 / 等等 / 不冲」的模型选择、未经校准的概率及原始请求与返回。
+**Describe a purchase, then inspect Laya's buy / wait / skip choice, uncalibrated probabilities, inference time, and raw request and response.**
 
-[中文 README](README.md) · [Full evaluation report (Chinese)](reports/baseline/README.md)
+English | [简体中文](README.md)
+
+[Run locally](#run-locally) · [Baseline evaluation](#baseline-evaluation) · [Full evaluation report (Chinese)](reports/baseline/README.md)
 
 This is an experiment for inspecting model behavior, not a reliable shopping adviser. The displayed probabilities express the model's relative preference among three options; they are **not** the probability that its advice is correct.
 
