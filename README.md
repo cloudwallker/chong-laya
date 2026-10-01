@@ -16,6 +16,8 @@
 
 图为真实推理记录 `buy-07` 的可视化示例，**不是应用界面截图**。原始请求与返回可在[机器可读报告](reports/baseline/results.json)中核对。
 
+![chong-laya](docs/images/cartoon-infographic.png)
+
 ## 快速开始
 
 需要 Python 3.11 和 [uv](https://docs.astral.sh/uv/getting-started/installation/)。以下命令适用于 Windows PowerShell 和 CPU；首次运行会从 Hugging Face 下载公开模型权重，约需 650 MB 缓存空间，无需 API Key。

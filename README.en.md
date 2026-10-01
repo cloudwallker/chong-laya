@@ -14,6 +14,8 @@ This is an experiment for inspecting model behavior, not a reliable shopping adv
 
 This visualizes the real `buy-07` inference record; **it is not an application screenshot**. The exact request and response are available in the [machine-readable report](reports/baseline/results.json).
 
+![chong-laya](docs/images/cartoon-infographic.png)
+
 ## Run locally
 
 Use Python 3.11 and [uv](https://docs.astral.sh/uv/getting-started/installation/). The following setup targets Windows PowerShell and CPU. The first run downloads public model weights from Hugging Face (about 650 MB of cache space); no API key is needed.
